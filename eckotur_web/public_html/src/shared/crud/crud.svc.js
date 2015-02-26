@@ -16,24 +16,6 @@
 						self.editMode = false;
 					});
 				};
-                                this.mostPopulatedCountry = function() {
-                                    var pop=-1;
-                                    var country;
-                                    if($scope.records.length==0)
-                                    {
-                                        alert("No data in the system");
-                                    }
-                                    else
-                                    {
-                                        for(var i = 0; i < $scope.records.length; i++){
-                                            if($scope.records[i].population>pop){
-                                                pop=$scope.records[i].population;
-                                                country=$scope.records[i];
-                                            }
-                                        }
-                                        document.getElementById("mostPopulated").innerHTML="<label>The most populated country is: "+country.name+"</label>";
-                                    }
-                                };
 				this.createRecord = function () {
 					this.editMode = true;
                                         this.responseMode = false;
