@@ -29,7 +29,7 @@
 					$scope.currentRecord = {};
 				};
 				this.saveRecord = function () {
-					var self = this;
+					var self = this;                              
 					if ($scope.currentRecord.id) {
 						$scope.currentRecord.put().then(function () {
 							self.fetchRecords();
