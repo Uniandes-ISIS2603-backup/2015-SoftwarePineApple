@@ -28,52 +28,38 @@
 
 	//Configuración módulo sport
 	var accomodationModule = angular.module('accomodationModule', ['CrudModule', 'MockModule']);
-
 	accomodationModule.constant('accomodation.context', 'accomodation');
-
 	accomodationModule.config(['accomodation.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
 			urlsProvider.registerUrl(context);
 		}]);
         
         var adminModule = angular.module('adminModule', ['CrudModule', 'MockModule']);
-
 	adminModule.constant('admin.context', 'admin');
-
 	adminModule.config(['admin.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
 			urlsProvider.registerUrl(context);
 		}]);    
         var catalogModule = angular.module('catalogModule', ['CrudModule', 'MockModule']);
-
 	catalogModule.constant('catalog.context', 'catalog');
-
 	catalogModule.config(['catalog.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
 			urlsProvider.registerUrl(context);
 		}]);
         var clientModule = angular.module('clientModule', ['CrudModule', 'MockModule']);
-
 	clientModule.constant('client.context', 'client');
-
 	clientModule.config(['client.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
 			urlsProvider.registerUrl(context);
 		}]);
         var ecoTourModule = angular.module('ecoTourModule', ['CrudModule', 'MockModule']);
-
 	ecoTourModule.constant('ecoTour.context', 'ecoTour');
-
 	ecoTourModule.config(['ecoTour.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
 			urlsProvider.registerUrl(context);
 		}]);
         var foodPlanModule = angular.module('foodPlanModule', ['CrudModule', 'MockModule']);
-
 	foodPlanModule.constant('foodPlan.context', 'foodPlan');
-
 	foodPlanModule.config(['foodPlan.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
 			urlsProvider.registerUrl(context);
 		}]);
         var providerModule = angular.module('providerModule', ['CrudModule', 'MockModule']);
-
 	providerModule.constant('provider.context', 'provider');
-
 	providerModule.config(['provider.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
 			urlsProvider.registerUrl(context);
 		}]);
