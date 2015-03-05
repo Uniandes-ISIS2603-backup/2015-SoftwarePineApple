@@ -37,6 +37,8 @@
                 this.registerSales();
                 var c=0;
                 var t=0;
+                var bSO;
+                var bC;
                 var d=new Date();
                 for(var i=0;i<$scope.currentRecord.sales.length;i++){
                     if($scope.currentRecord.sales[i].date.getMonth()==d.getMonth()){
