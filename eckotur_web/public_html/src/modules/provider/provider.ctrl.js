@@ -6,7 +6,7 @@
             this.homeMode=true;
             $scope.currentRecord.sales=[];
             $scope.currentRecord.offers=[];
-            $scope.currentRecord.report;
+            $scope.currentRecord.reports=[];
             this.saveOffer = function(pOffer){
                 pOffer.nSales=0;
                 var offer = angular.copy(pOffer);
@@ -63,13 +63,16 @@
                             bestSelledOffer=$scope.currentRecord.sales[i].offer;
                         }
                         if(bestClientN<=thisClientN){
-                            alert("entra al if"+$scope.currentRecord.sales[i].buyer);
                             bestClientN=thisClientN;
                             bestClient=$scope.currentRecord.sales[i].buyer;
                         }
                     }
                 }
-                $scope.currentRecord.report={totalSales:c,earnings:t,bestSelledOffer:bestSelledOffer,bestSelledOfferN:bestSelledOfferN,bestClient:bestClient,bestClientN:bestClientN};
+                if($scope.currentRecord.reports.length===0||(!$scope.currentRecord.reports[$scope.currentRecord.reports.length-1].month===d.getMonth()||$scope.currentRecord.reports[$scope.currentRecord.reports.length-1].year===d.getYear())){
+                    alert("Entra al if");
+                }
+                $scope.currentRecord.reports.push({month:d.getMonth(),year:d.getYear(),totalSales:c,earnings:t,bestSelledOffer:bestSelledOffer,bestSelledOfferN:bestSelledOfferN,bestClient:bestClient,bestClientN:bestClientN});
+                alert($scope.currentRecord.reports.length);
                 this.reportMode=true;
                 this.offersMode=false;
                 this.createOfferMode=false;

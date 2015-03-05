@@ -1,5 +1,5 @@
 <div ng-controller="providerCtrl as providerCtrl">
-    <link href="src/assets/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="src/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="src/assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="src/assets/css/prettyPhoto.css" rel="stylesheet">
     <link href="src/assets/css/price-range.css" rel="stylesheet">
@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">-->
 
     <header id="header"><!--header-->
         <div class="header_top"><!--header_top-->
@@ -174,12 +174,12 @@
         </table>
     </div>
     <div ng-show="providerCtrl.reportMode">
-        <label>This month you have: </label><br>
-        <label>Selled {{currentRecord.report.totalSales}} offers</label><br>
-        <label>Earned {{currentRecord.report.earnings}} dollars</label><br>
-        <label>Your best selled offer this month was {{currentRecord.report.bestSelledOffer}} with a total of {{currentRecord.report.bestSelledOfferN}} sales</label><br>
-        <label>Your best client this month was {{currentRecord.report.bestClient}} with a total of {{currentRecord.report.bestClientN}} offers bought</label><br>
-        <label>In comparison with last month you selled {{}}</label><br>
+        <label>This month {{currentRecord.reports[0].month}} you have: </label><br>
+        <label>Selled {{currentRecord.reports[0].totalSales}} offers</label><br>
+        <label>Earned {{currentRecord.reports[0].earnings}} dollars</label><br>
+        <label>Your best selled offer this month was {{currentRecord.reports[0].bestSelledOffer}} with a total of {{currentRecord.report[0].bestSelledOfferN}} sales</label><br>
+        <label>Your best client this month was {{currentRecord.reports[0].bestClient}} with a total of {{currentRecord.reports[0].bestClientN}} offers bought</label><br>
+        <!--<label>In comparison with last month you selled {{}}</label><br>-->
     </div>
     <div ng-show="providerCtrl.editMode">
     </div>
