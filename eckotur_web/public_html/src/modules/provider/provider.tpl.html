@@ -105,8 +105,7 @@
                                     <li class="dropdown"><a href="#">Offers<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
                                             <li><a ng-click="providerCtrl.showOffers()">My Offers</a></li>
-                                            <li><a>Statistics</a></li>
-                                            <li><a>Create new offer</a></li>
+                                            <li><a ng-click="providerCtrl.createOffer()">Create new offer</a></li>
                                         </ul>
                                     </li> 
                                     <li class="dropdown"><a href="#">Sales<i class="fa fa-angle-down"></i></a>
@@ -130,7 +129,6 @@
     </header><!--/header-->
     <div ng-show="providerCtrl.salesMode">
         <label>Total of sales: {{currentRecord.sales.length}}</label>
-        <label id="totalOfEarnings"></label>
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -156,6 +154,7 @@
         </table>
     </div>
     <div ng-show="providerCtrl.offersMode">
+        <label>Total of offers: {{currentRecord.offers.length}}</label>
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -166,15 +165,29 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="record in records">
-                    <td>{{record.name}}</td>
-                    <td>{{record.price}}</td>
-                    <td>{{record.type}}</td>
-                    <td>{{record.nSales}}</td>
+                <tr ng-repeat="offer in currentRecord.offers">
+                    <td>{{offer.name}}</td>
+                    <td>{{offer.price}}</td>
+                    <td>{{offer.type}}</td>
+                    <td>{{offer.nSales}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div ng-show="providerCtrl.editMode">
     </div>
+    <div ng-show="providerCtrl.createOfferMode">
+        <form id="createOfferForm" novalidate class="simple-form">
+            Name: <input type="text" ng-model="offer.name" name="offerName" required=""/><br/>
+            <div ng-show="form.$submitted || form.offerName.$touched">
+                <div ng-show="form.name.$error.required">A name is required.</div>
+            </div>
+            Price: <input type="number" ng-model="offer.price" required/><br/>
+            Type: <input type="radio" ng-model="offer.type" value="ecoTour"/>EcoTour
+            <input type="radio" ng-model="offer.type" value="accomodation"/>Accomodation
+            <input type="radio" ng-model="offer.type" value="foodPlan"/>Food Plan<br>
+            <input type="submit" ng-click="providerCtrl.saveOffer(offer)" value="Save"/>
+        </form>
+    </div>
+    
 </div>
