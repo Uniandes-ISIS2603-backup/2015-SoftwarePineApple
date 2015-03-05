@@ -110,7 +110,7 @@
                                         <ul role="menu" class="sub-menu">
                                             <li><a ng-click="providerCtrl.showSales()">My Sales</a></li>
                                             <li><a>Statistics</a></li>
-                                            <li><a>This month report</a></li>
+                                            <li><a ng-click="providerCtrl.thisMonthReport()">This month report</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -172,6 +172,10 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+    <div ng-show="providerCtrl.reportMode">
+        <label>This month you have selled {{currentRecord.report.totalSales}} offers</label><br>
+        <label>This month you have earned {{currentRecord.report.earnings}} dollars</label><br>
     </div>
     <div ng-show="providerCtrl.editMode">
     </div>
