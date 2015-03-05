@@ -39,7 +39,6 @@
                 </div>
             </div>
         </div><!--/header_top-->
-
         <div class="header-middle"><!--header-middle-->
             <div class="container">
                 <div class="row">
@@ -85,7 +84,6 @@
                 </div>
             </div>
         </div><!--/header-middle-->
-
         <div class="header-bottom"><!--header-bottom-->
             <div class="container">
                 <div class="row">
@@ -140,7 +138,6 @@
                     <th>Date</th>
                 </tr>
             </thead>
-
             <tbody>
                 <tr ng-repeat="sale in currentRecord.sales">
                     <td>{{sale.id}}</td>
@@ -148,7 +145,7 @@
                     <td>{{sale.buyer}}</td>
                     <td>{{sale.quantity}}</td>
                     <td>{{sale.price}}</td>
-                    <td>{{sale.date}}</td>
+                    <td>{{sale.date.toDateString()}}</td>
                 </tr>
             </tbody>
         </table>
@@ -161,6 +158,7 @@
                     <th>Name</th>
                     <th>Price</th>
                     <th>Type</th>
+                    <th>Image</th>
                     <th>Number of sales</th>
                 </tr>
             </thead>
@@ -169,6 +167,7 @@
                     <td>{{offer.name}}</td>
                     <td>{{offer.price}}</td>
                     <td>{{offer.type}}</td>
+                    <td><label>{{offer.image.toString()}}</label></td>
                     <td>{{offer.nSales}}</td>
                 </tr>
             </tbody>
@@ -185,9 +184,10 @@
             Price: <input type="number" ng-model="offer.price" required/><br/>
             Type: <input type="radio" ng-model="offer.type" value="ecoTour"/>EcoTour
             <input type="radio" ng-model="offer.type" value="accomodation"/>Accomodation
-            <input type="radio" ng-model="offer.type" value="foodPlan"/>Food Plan<br>
+            <input type="radio" ng-model="offer.type" value="foodPlan"/>Food Plan<br/>
+            Details: <input type="text" ng-model="offer.details"/><br/>
+            Promotional Image: <input type="file" ng-model="offer.image"/><br/>
             <input type="submit" ng-click="providerCtrl.saveOffer(offer)" value="Save"/>
         </form>
     </div>
-    
 </div>
