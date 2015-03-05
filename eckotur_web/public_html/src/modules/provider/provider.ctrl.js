@@ -37,21 +37,44 @@
                 this.registerSales();
                 var c=0;
                 var t=0;
-                var bSO;
-                var bC;
+                var bestSelledOffer;
+                var bestSelledOfferN=0;
+                var bestClient;
+                var bestClientN=0;
                 var d=new Date();
                 for(var i=0;i<$scope.currentRecord.sales.length;i++){
-                    if($scope.currentRecord.sales[i].date.getMonth()==d.getMonth()){
+                    if($scope.currentRecord.sales[i].date.getMonth()===d.getMonth()){
+                        var thisOfferN=0;
+                        var thisClientN=0;
                         c++;
                         t+=$scope.currentRecord.sales[i].price;
+                        for(var j=0;j<$scope.currentRecord.sales.length;j++){
+                            if($scope.currentRecord.sales[i].offer===$scope.currentRecord.sales[j].offer&&$scope.currentRecord.sales[j].date.getMonth()===d.getMonth()){
+                                thisOfferN++;
+                            }
+                        }
+                        for(var j=0;j<$scope.currentRecord.sales.length;j++){
+                            if($scope.currentRecord.sales[i].buyer===$scope.currentRecord.sales[j].buyer&&$scope.currentRecord.sales[j].date.getMonth()===d.getMonth()){
+                                thisClientN++;
+                            }
+                        }
+                        if(bestSelledOfferN<=thisOfferN){
+                            bestSelledOfferN=thisOfferN;
+                            bestSelledOffer=$scope.currentRecord.sales[i].offer;
+                        }
+                        if(bestClientN<=thisClientN){
+                            alert("entra al if"+$scope.currentRecord.sales[i].buyer);
+                            bestClientN=thisClientN;
+                            bestClient=$scope.currentRecord.sales[i].buyer;
+                        }
                     }
                 }
-                $scope.currentRecord.report={totalSales:c,earnings:t};
+                $scope.currentRecord.report={totalSales:c,earnings:t,bestSelledOffer:bestSelledOffer,bestSelledOfferN:bestSelledOfferN,bestClient:bestClient,bestClientN:bestClientN};
                 this.reportMode=true;
                 this.offersMode=false;
                 this.createOfferMode=false;
                 this.salesMode=false;
-            }
+            };
             this.registerSales = function(){
                 $scope.currentRecord.sales=[{id:'1',offer:"Viaje al centro de la tierra",buyer:"Julio Pepe",quantity:1,price:100,date:new Date("October 13, 2014 11:13:00")},
                 {id:'1',offer:"Viaje al centro de la tierra",buyer:"Julian Verne",quantity:2,price:200,date:new Date("December 23, 2014 12:13:00")},

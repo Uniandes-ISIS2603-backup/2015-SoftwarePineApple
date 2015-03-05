@@ -167,15 +167,19 @@
                     <td>{{offer.name}}</td>
                     <td>{{offer.price}}</td>
                     <td>{{offer.type}}</td>
-                    <td><label>{{offer.image.toString()}}</label></td>
+                    <td>{{offer.image}}</td>
                     <td>{{offer.nSales}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div ng-show="providerCtrl.reportMode">
-        <label>This month you have selled {{currentRecord.report.totalSales}} offers</label><br>
-        <label>This month you have earned {{currentRecord.report.earnings}} dollars</label><br>
+        <label>This month you have: </label><br>
+        <label>Selled {{currentRecord.report.totalSales}} offers</label><br>
+        <label>Earned {{currentRecord.report.earnings}} dollars</label><br>
+        <label>Your best selled offer this month was {{currentRecord.report.bestSelledOffer}} with a total of {{currentRecord.report.bestSelledOfferN}} sales</label><br>
+        <label>Your best client this month was {{currentRecord.report.bestClient}} with a total of {{currentRecord.report.bestClientN}} offers bought</label><br>
+        <label>In comparison with last month you selled {{}}</label><br>
     </div>
     <div ng-show="providerCtrl.editMode">
     </div>
