@@ -7,6 +7,7 @@
             $scope.currentRecord.sales=[];
             $scope.currentRecord.offers=[];
             $scope.currentRecord.reports=[];
+            $scope.currentRecord.nReports=0;
             this.saveOffer = function(pOffer){
                 pOffer.nSales=0;
                 var offer = angular.copy(pOffer);
@@ -68,11 +69,11 @@
                         }
                     }
                 }
-                if($scope.currentRecord.reports.length===0||(!$scope.currentRecord.reports[$scope.currentRecord.reports.length-1].month===d.getMonth()||$scope.currentRecord.reports[$scope.currentRecord.reports.length-1].year===d.getYear())){
-                    alert("Entra al if");
+                if($scope.currentRecord.nReports===0||(!$scope.currentRecord.reports[$scope.currentRecord.nReports-1].month===d.getMonth()||$scope.currentRecord.reports[$scope.currentRecord.nReports-1].year!==d.getYear())){
+                    $scope.currentRecord.reports.push({month:d.getMonth(),year:d.getYear(),totalSales:c,earnings:t,bestSelledOffer:bestSelledOffer,bestSelledOfferN:bestSelledOfferN,bestClient:bestClient,bestClientN:bestClientN});
+                    $scope.currentRecord.nReports++;
                 }
-                $scope.currentRecord.reports.push({month:d.getMonth(),year:d.getYear(),totalSales:c,earnings:t,bestSelledOffer:bestSelledOffer,bestSelledOfferN:bestSelledOfferN,bestClient:bestClient,bestClientN:bestClientN});
-                alert($scope.currentRecord.reports.length);
+                alert($scope.currentRecord.nReports)
                 this.reportMode=true;
                 this.offersMode=false;
                 this.createOfferMode=false;
