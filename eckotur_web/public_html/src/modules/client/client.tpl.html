@@ -62,7 +62,8 @@
                             <ul class="nav navbar-nav">
                                 <li><a href="#"><i class="fa fa-star"></i> Catalog</a></li>
                                 <li><a href="#"><i class="fa fa-star"></i> Providers</a></li>
-                                <li><a href="#/client"><i class="fa fa-user" onclick="clientCtrl.showCart()"></i> Cart</a></li>
+                                <li><a href="#/client"><i class="fa fa-user"></i> Cart</a></li>
+                                <li> <button class="btn btn-default btn-sm" ng-click="clientCtrl.showCart()"  ><span class="glyphicon glyphicon-shopping-cart"></span>MY CART </button></li>
                                 <li><a href="#"><i class="fa fa-envelope"></i> Messages</a></li>
                                 <li><a href="#"><i class="fa fa-lock"></i> Logout</a></li>
                             </ul>
@@ -151,6 +152,28 @@
                     <td>{{bought.provider}}</td>
                     <td>{{bought.price}}</td>
                     <td><label>{{bought.date.toString()}}</label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div ng-show="clientCtrl.cartMode">
+        <label>Total of purchases {{currentRecord.inCart.length}}</label>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Offer</th>
+                    <th>Provider</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="inCa in currentRecord.inCart">
+                    <td>{{inCa.offer}}</td>
+                    <td>{{inCa.provider}}</td>
+                    <td>{{inCa.price}}</td>
+                    <td><label>{{inCa.date.toString()}}</label></td>
                 </tr>
             </tbody>
         </table>
