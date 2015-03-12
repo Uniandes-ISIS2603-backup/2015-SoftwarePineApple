@@ -1,8 +1,7 @@
 (function () {
     var app = angular.module('providerModule');
-    app.controller('providerCtrl', ['$scope', 'CRUDUtils', 'provider.context', function ($scope, CRUDUtils, context) {
-            this.url = context;
-            CRUDUtils.extendCtrl(this, $scope);
+    app.controller('providerCtrl', ['$scope', 'CRUDUtils', 'provider.context', function ($scope, providerService) {
+            providerService.extendCtrl(this, $scope);
             this.homeMode=true;
             $scope.currentRecord.sales=[];
             $scope.currentRecord.offers=[];
