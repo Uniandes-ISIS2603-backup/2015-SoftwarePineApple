@@ -52,7 +52,7 @@ public class ClientLogic implements IClientLogic {
     protected EntityManager entityManager;
 
     public ClientDTO createProvider(ClientDTO provider) {
-        ClientEntity entity = ClientConverter.persistenceDTO2Entity(provider);
+        ClientEntity entity = ClientConverter.persistenceDTO2Entity(client);
         entityManager.persist(entity);
         return ClientConverter.entity2PersistenceDTO(entity);
     }
@@ -63,10 +63,10 @@ public class ClientLogic implements IClientLogic {
     }
 
     public ClientPageDTO getClients(Integer page, Integer maxRecords) {
-        Query count = entityManager.createQuery("select count(u) from ProviderEntity u");
+        Query count = entityManager.createQuery("select count(u) from ClientEntity u");
         Long regCount = 0L;
         regCount = Long.parseLong(count.getSingleResult().toString());
-        Query q = entityManager.createQuery("select u from ProviderEntity u");
+        Query q = entityManager.createQuery("select u from ClientEntity u");
         if (page != null && maxRecords != null) {
             q.setFirstResult((page - 1) * maxRecords);
             q.setMaxResults(maxRecords);

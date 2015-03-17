@@ -54,7 +54,7 @@ public class ClientService {
     protected IClientLogic clientLogicService;
 
     @POST
-    public ProviderDTO createClient(ProviderDTO client) {
+    public ClientDTO createClient(ClientDTO client) {
         return clientLogicService.createClient(client);
     }
 
