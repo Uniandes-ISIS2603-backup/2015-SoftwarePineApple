@@ -56,7 +56,7 @@
         </script>
     </head>
 
-    <body>
+    <body onload="autoClick()">
 
         <div id="wrapper">
 
@@ -408,10 +408,10 @@
                             <div ng-controller="providerCtrl as providerCtrl">
 
                                 <!-- /.panel-heading -->  
-                                <a id="allMyOffers" ng-click="providerCtrl.showOffers()">Show</a>
+                                <a id="allMyOffers" ng-click="providerCtrl.showOffers()"></a>
                                 <div class="panel-body">
                                     <div class="dataTable_wrapper">
-                                        <div ng-show="providerCtrl.offersModeMode">
+                                        <div ng-show="providerCtrl.offersMode">
                                             <label>Total of Offers: {{currentRecord.offers.length}}</label>
                                             <table class="table table-striped table-bordered">
                                                 <thead>
@@ -460,7 +460,10 @@
                             <div ng-controller="providerCtrl as providerCtrl">
 
                                 <!-- /.panel-heading -->  
-                                <a id="createOffer" ng-click="providerCtrl.createOffer()">Create New Offer</a>
+                                <center>
+                                    <button type="button" ng-click="providerCtrl.createOffer()" class="btn btn-default" >Create New Offer</button>
+                                </center>
+                                <br>
                                 <div ng-show="providerCtrl.createOfferMode">
                                     <form id="createOfferForm" novalidate class="simple-form" style="margin-left:20px; margin-right: 20px;">
                                         <h4>Name:</h4>
@@ -476,7 +479,7 @@
                                         <input type="radio" ng-model="offer.type" value="foodPlan"/>   Food Plan<br/> <br/>
                                         <h4>Details:</h4><input class="form-control" type="text" ng-model="offer.details"/><br/>
                                         <h4>Promotional Image:</h4><input type="file" ng-model="offer.image"/><br/>
-                                        <center><input type="submit" class="btn btn-default" ng-click="providerCtrl.saveOffer(offer)" value="Save"/></center><br><br>
+                                        <center><input type="submit" class="btn btn-success" ng-click="providerCtrl.saveOffer(offer)" value="Save"/></center><br><br>
                                     </form>
                                 </div>
 
