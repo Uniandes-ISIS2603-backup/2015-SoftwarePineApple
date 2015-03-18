@@ -5,8 +5,10 @@
 			CRUDUtils.extendCtrl(this, $scope);
                         this.purchasesMode=false;
                         this.offersMode = false;
+                        this.cartMode = false;
                         $scope.currentRecord.boughts=[];
                         $scope.currentRecord.lclOffers = [];
+                        $scope.currentRecord.inCart = [];
                         //this.registerBoughts();
                        // this.registerOfferts();
                         var startAll = false;
@@ -20,40 +22,33 @@
                         };
                         
                         this.showCart = function(){
-                            alert("llegue");
-                            this.purchasesMode=true;
-                            var bought=0;
+                            this.purchasesMode=false;
+                            this.offersMode=false;
+                            this.cartMode = true;
                             this.start();
-                            for(var i=0;i<$scope.currentRecord.boughts.length;i++){
-                                bought+=$scope.currentRecord.boughts[i].price;
-                            }
-                            document.getElementById("totalOfEarnings").innerHTML="<label>Total of bought: "+bought+"</label>";
-                        };
+                          };
                         this.showPurchases = function(){
-                            if(this.purchasesMode==true){this.purchasesMode=false;}
+                            if(this.purchasesMode===true){this.purchasesMode=false;}
                             else{this.purchasesMode=true;}
                             this.offersMode = false;
-                            var bought=0;
+                            this.cartMode = false;
                             this.start();
-                            for(var i=0;i<$scope.currentRecord.boughts.length;i++){
-                                bought+=$scope.currentRecord.boughts[i].price;
-                            }
-                            document.getElementById("totalOfEarnings").innerHTML="<label>Total of bought: "+bought+"</label>";
-                        };
+                             };
                         
                         this.showOffers = function(){
                            this.start();
                            if(this.offersMode===true){this.offersMode=false;}
                             else{this.offersMode=true;}
                             this.purchasesMode = false;
+                            this.cartMode=false;
                             
                         };
                         this.addToCart= function(offer){
                             this.start();
                             var newBou ={id:offer.id,offer:offer.name, provider:offer.provider ,quantity:"1",price: offer.price ,date:'05/03/2015'};
-                            $scope.currentRecord.boughts.push(newBou);
-                            this.offersMode = false;
-                            this.purchasesMode = true;
+                            $scope.currentRecord.inCart.push(newBou);
+                           // this.offersMode = false;
+                         //   this.purchasesMode = true;
                             
                         };
                                                
