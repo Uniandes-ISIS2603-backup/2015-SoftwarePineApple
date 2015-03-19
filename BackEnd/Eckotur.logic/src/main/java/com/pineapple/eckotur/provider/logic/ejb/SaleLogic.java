@@ -15,27 +15,27 @@ public class SaleLogic implements ISaleLogic {
     @PersistenceContext(unitName = "EckoturPU")
     protected EntityManager entityManager;
 
-    public SaleDTO createSale(SaleDTO sale) {
+    public SaleDTO createSale(Long providerId, SaleDTO sale) {
         SaleEntity entity = SaleConverter.persistenceDTO2Entity(sale);
         entityManager.persist(entity);
         return SaleConverter.entity2PersistenceDTO(entity);
     }
 
-    public List<SaleDTO> getSalesByClient(Long sellerId, Long clientId) {
-        Query q = entityManager.createQuery("select u from SaleEntity u where u.clientId="+clientId+" and u.sellerId="+sellerId);
+    public List<SaleDTO> getSalesByClient(Long providerId, Long clientId) {
+        Query q = entityManager.createQuery("select u from SaleEntity u where u.clientId="+clientId+" and u.providerId="+providerId);
         return SaleConverter.entity2PersistenceDTOList(q.getResultList());
     }
     
-    public List<SaleDTO> getSalesByTransaction(Long sellerId, Long transactionId) {
-        Query q = entityManager.createQuery("select u from SaleEntity u where u.transactionId="+transactionId+" and u.sellerId="+sellerId);
+    public List<SaleDTO> getSalesByTransaction(Long providerId, Long transactionId) {
+        Query q = entityManager.createQuery("select u from SaleEntity u where u.transactionId="+transactionId+" and u.providerId="+providerId);
         return SaleConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
-    public SalePageDTO getSales(Long sellerId, Integer page, Integer maxRecords) {
-        Query count = entityManager.createQuery("select count(u) from SaleEntity u");
+    public SalePageDTO getSales(Long providerId, Integer page, Integer maxRecords) {
+        Query count = entityManager.createQuery("select count(u) from SaleEntity u where u.providerId="+providerId);
         Long regCount = 0L;
         regCount = Long.parseLong(count.getSingleResult().toString());
-        Query q = entityManager.createQuery("select u from SaleEntity u");
+        Query q = entityManager.createQuery("select u from SaleEntity u where u.providerId="+providerId);
         if (page != null && maxRecords != null) {
             q.setFirstResult((page - 1) * maxRecords);
             q.setMaxResults(maxRecords);

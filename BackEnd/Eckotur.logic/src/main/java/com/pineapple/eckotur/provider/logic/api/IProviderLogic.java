@@ -1,5 +1,6 @@
 package com.pineapple.eckotur.provider.logic.api;
 
+import com.pineapple.eckotur.offer.logic.dto.OfferDTO;
 import com.pineapple.eckotur.provider.logic.dto.ProviderDTO;
 import com.pineapple.eckotur.provider.logic.dto.ProviderPageDTO;
 import com.pineapple.eckotur.provider.logic.dto.SaleDTO;
@@ -19,15 +20,13 @@ public interface IProviderLogic {
 
     public void updateProvider(ProviderDTO detail);
     
-    public List<OfferDTO> getProviderOffers(Integer page, Integer maxRecords);
+    public List<OfferDTO> getProviderOffers(Long id, Integer page, Integer maxRecords);
     
-    public List<SaleDTO> getProviderOffers(Integer page, Integer maxRecords);
+    public List<SaleDTO> getProviderSales(Long id, Integer page, Integer maxRecords);
     
-    public List<NewsDTO> getProviderOffers(Integer page, Integer maxRecords);
+    public List<NewsDTO> getProviderNews(Long id, Integer page, Integer maxRecords);
     
-    public List<MessageDTO> getProviderOffers(Integer page, Integer maxRecords);
+    public List<MessageDTO> getProviderMessages(Long id, Integer page, Integer maxRecords);
     
-    public List<ReportDTO> getProviderOffers(Integer page, Integer maxRecords);
-    
-    public List<OfferDTO> getProviderOffers(Integer page, Integer maxRecords);
+    public List<ReportDTO> getProviderReports(Long id, Integer page, Integer maxRecords);
 }

@@ -6,13 +6,13 @@ import java.util.List;
 
 public interface ISaleLogic {
     
-    public SaleDTO createSale(SaleDTO sale);
+    public SaleDTO createSale(Long providerId, SaleDTO sale);
     
-    public List<SaleDTO> getSalesByClient(Long sellerId, Long clientId);
+    public List<SaleDTO> getSalesByClient(Long providerId, Long clientId);
     
-    public List<SaleDTO> getSalesByTransaction(Long sellerId, Long transactionId);
+    public List<SaleDTO> getSalesByTransaction(Long providerId, Long transactionId);
     
-    public SalePageDTO getSales(Long sellerId, Integer page, Integer maxRecords);
+    public SalePageDTO getSales(Long providerId, Integer page, Integer maxRecords);
     
     public SaleDTO getSale(Long id);
 }
