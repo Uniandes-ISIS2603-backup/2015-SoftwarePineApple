@@ -12,9 +12,9 @@ public class SaleEntity {
     @GeneratedValue(generator = "Sale")
     private Long transactionId;
 	
-    private Long buyerId;
+    private Long clientId;
 
-    private Long sellerId;
+    private Long providerId;
 
     private Long offerId;
 
@@ -28,12 +28,12 @@ public class SaleEntity {
             return transactionId;
     }
 
-    public Long getBuyerId(){
-            return buyerId;
+    public Long getClientId(){
+            return clientId;
     }
 
-    public Long getSellerId(){
-            return sellerId;
+    public Long getProviderId(){
+            return providerId;
     }
 
     public Long getOfferId(){
@@ -56,12 +56,12 @@ public class SaleEntity {
             this.transactionId=transactionId;
     }
 
-    public void setBuyerId(Long buyerId){
-            this.buyerId=buyerId;
+    public void setClientId(Long clientId){
+            this.clientId=clientId;
     }
 
-    public void setSellerId(Long sellerId){
-            this.sellerId=sellerId;
+    public void setProviderId(Long providerId){
+            this.providerId=providerId;
     }
 
     public void setOfferId(Long offerId){
