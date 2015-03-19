@@ -5,17 +5,13 @@
  */
 package com.pineapple.eckotur.client.logic.dto;
 
-
-
 import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 
-
 public class ClientPageDTO {
   
-
     private Long totalRecords;
 
     private List<ClientDTO> records;
@@ -36,4 +32,3 @@ public class ClientPageDTO {
         this.records = records;
     }
 }
-
