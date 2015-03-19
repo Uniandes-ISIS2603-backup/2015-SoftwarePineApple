@@ -1,3 +1,5 @@
+package com.pineapple.eckotur.service;
+
 import com.pineapple.eckotur.provider.logic.api.IProviderLogic;
 import com.pineapple.eckotur.provider.logic.dto.ProviderDTO;
 import com.pineapple.eckotur.provider.logic.dto.ProviderPageDTO;
