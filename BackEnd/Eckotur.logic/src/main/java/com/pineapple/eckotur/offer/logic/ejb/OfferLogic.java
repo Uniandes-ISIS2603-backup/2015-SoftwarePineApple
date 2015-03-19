@@ -1,20 +1,19 @@
 package com.pineapple.eckotur.offer.logic.ejb;
 
-
 import com.pineapple.eckotur.offer.logic.api.ICatalogLogic;
 import com.pineapple.eckotur.offer.logic.dto.OfferDTO;
 import com.pineapple.eckotur.offer.logic.dto.OfferPageDTO;
 import com.pineapple.eckotur.offer.logic.converter.CatalogConverter;
 import com.pineapple.eckotur.offer.logic.entity.OfferEntity;
-
 import java.util.List;
-
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 public class OfferLogic implements ICatalogLogic {
-
+    @PersistenceContext(unitName = "EckoturPU")
     protected EntityManager entityManager;
 
-    
     public List<OfferDTO> getOffers() {
         Query q = entityManager.createQuery("select u from OfferEntity u");
         return CatalogConverter.entity2PersistenceDTOList(q.getResultList());
@@ -38,6 +37,4 @@ public class OfferLogic implements ICatalogLogic {
     public OfferDTO getOffer(Long id) {
         return CatalogConverter.entity2PersistenceDTO(entityManager.find(OfferEntity.class, id));
     }
-
-    
 }

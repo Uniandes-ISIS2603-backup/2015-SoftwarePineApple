@@ -30,8 +30,7 @@ public class OfferDTO {
 	public String getName(){
 		return name;
 	}
-	
-	
+
 	public String getWebpage(){
 		return webpage;
 	}
