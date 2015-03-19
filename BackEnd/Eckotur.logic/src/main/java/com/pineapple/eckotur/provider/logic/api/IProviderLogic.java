@@ -1,5 +1,6 @@
 package com.pineapple.eckotur.provider.logic.api;
 
+import com.pineapple.eckotur.message.logic.dto.MessageDTO;
 import com.pineapple.eckotur.offer.logic.dto.OfferDTO;
 import com.pineapple.eckotur.provider.logic.dto.ProviderDTO;
 import com.pineapple.eckotur.provider.logic.dto.ProviderPageDTO;
