@@ -36,11 +36,11 @@
             
             this.registerPaseos = function(){
                 $scope.currentRecord.Paseos=[{id:'1',Paseo:"Viaje al centro de la tierra",Descripcion: "paseo guiado al centro de la tierra", available: 1,price: 100,date: new Date("October 13, 2014 11:13:00")},
-                {id:'1',paseo:"Viaje al centro de la tierra",Descripcion: "paseo guiado al centro de la tierra" ,available: 1,price:200,date:new Date("December 23, 2014 12:13:00")},
-                {id:'2',paseo:"Caída libre en El Salto del Ángel",Descripcion: "paseo guiado al centro de la tierra" ,available: 1,price:1000,date:new Date("November 14, 2014 11:13:00")},
-                {id:'3',paseo:"Ida al Amazonas",Descripcion: "paseo guiado al centro de la tierra" ,available: 1,price:200,date:new Date("July 18, 2014 10:13:00")},
-                {id:'4',paseo:"Visita con los monos",Descripcion: "paseo guiado al centro de la tierra" ,available: 1,price:100,date:new Date()},
-                {id:'5',paseo:"Visita con los monos",Descripcion: "paseo guiado al centro de la tierra" ,available: 1,price:300,date:new Date()}];
+                {id:'P1',paseo:"Viaje al centro de la tierra",Descripcion: "paseo guiado al centro de la tierra" ,available: 1,price:200,date:new Date("December 23, 2014 12:13:00")},
+                {id:'P2',paseo:"Caída libre en El Salto del Ángel",Descripcion: "paseo guiado al centro de la tierra" ,available: 1,price:1000,date:new Date("November 14, 2014 11:13:00")},
+                {id:'P3',paseo:"Ida al Amazonas",Descripcion: "paseo guiado al centro de la tierra" ,available: 1,price:200,date:new Date("July 18, 2014 10:13:00")},
+                {id:'P4',paseo:"Visita con los monos",Descripcion: "paseo guiado al centro de la tierra" ,available: 1,price:100,date:new Date()},
+                {id:'P5',paseo:"Visita con los monos",Descripcion: "paseo guiado al centro de la tierra" ,available: 1,price:300,date:new Date()}];
             };
         }]);
 })();
