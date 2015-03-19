@@ -9,14 +9,14 @@ public class ProviderConverter {
 
     public static ProviderDTO entity2PersistenceDTO(ProviderEntity entity) {
         if (entity != null) {
-        	ProviderDTO dto = new ProviderDTO();	
-        	dto.setUserId(entity.getUserId());
-        	dto.setUserType(entity.getUserType());
-        	dto.setName(entity.getName());
-        	dto.setEmail(entity.getEmail());
-        	dto.setWebpage(entity.getWebpage());
-        	dto.setDescription(entity.getDescription());
-        	dto.setBankAccount(entity.getBankAccount());
+            ProviderDTO dto = new ProviderDTO();	
+            dto.setUserId(entity.getUserId());
+            dto.setUserType(entity.getUserType());
+            dto.setName(entity.getName());
+            dto.setEmail(entity.getEmail());
+            dto.setWebpage(entity.getWebpage());
+            dto.setDescription(entity.getDescription());
+            dto.setBankAccount(entity.getBankAccount());
             return dto;
         } else {
             return null;
@@ -25,14 +25,14 @@ public class ProviderConverter {
 
     public static ProviderEntity persistenceDTO2Entity(ProviderDTO dto) {
         if (dto != null) {
-        	ProviderEntity entity = new ProviderEntity();
-        	entity.setUserId(dto.getUserId());
-        	entity.setUserType(dto.getUserType());
-        	entity.setName(dto.getName());
-        	entity.setEmail(dto.getEmail());
-        	entity.setWebpage(dto.getWebpage());
-        	entity.setDescription(dto.getDescription());
-        	entity.setBankAccount(dto.getBankAccount());
+            ProviderEntity entity = new ProviderEntity();
+            entity.setUserId(dto.getUserId());
+            entity.setUserType(dto.getUserType());
+            entity.setName(dto.getName());
+            entity.setEmail(dto.getEmail());
+            entity.setWebpage(dto.getWebpage());
+            entity.setDescription(dto.getDescription());
+            entity.setBankAccount(dto.getBankAccount());
             return entity;
         } else {
             return null;

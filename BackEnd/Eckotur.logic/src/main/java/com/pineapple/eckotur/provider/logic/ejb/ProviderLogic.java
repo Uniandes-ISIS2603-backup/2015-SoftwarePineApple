@@ -1,27 +1,18 @@
 package com.pineapple.eckotur.provider.logic.ejb;
 
-import javax.ejb.EJB;
-import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
-import javax.inject.Inject;
-import javax.enterprise.inject.Default;
-
 import com.pineapple.eckotur.provider.logic.api.IProviderLogic;
+import com.pineapple.eckotur.provider.logic.converter.ProviderConverter;
 import com.pineapple.eckotur.provider.logic.dto.ProviderDTO;
 import com.pineapple.eckotur.provider.logic.dto.ProviderPageDTO;
-import com.pineapple.eckotur.provider.logic.converter.ProviderConverter;
 import com.pineapple.eckotur.provider.logic.entity.ProviderEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-@Default
-@Stateless
-@LocalBean
 public class ProviderLogic implements IProviderLogic {
 
-    @PersistenceContext(unitName = "ProviderClassPU")
+    @PersistenceContext(unitName = "EckoturPU")
     protected EntityManager entityManager;
 
     public ProviderDTO createProvider(ProviderDTO provider) {
