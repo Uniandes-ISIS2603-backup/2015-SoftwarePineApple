@@ -3,7 +3,6 @@ package com.pineapple.eckotur.provider.logic.ejb;
 import com.pineapple.eckotur.provider.logic.api.ISaleLogic;
 import com.pineapple.eckotur.provider.logic.converter.SaleConverter;
 import com.pineapple.eckotur.provider.logic.dto.SaleDTO;
-import com.pineapple.eckotur.provider.logic.dto.SalePageDTO;
 import com.pineapple.eckotur.provider.logic.entity.SaleEntity;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -31,19 +30,9 @@ public class SaleLogic implements ISaleLogic {
         return SaleConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
-    public SalePageDTO getSales(Long providerId, Integer page, Integer maxRecords) {
-        Query count = entityManager.createQuery("select count(u) from SaleEntity u where u.providerId="+providerId);
-        Long regCount = 0L;
-        regCount = Long.parseLong(count.getSingleResult().toString());
+    public List<SaleDTO> getSales(Long providerId) {
         Query q = entityManager.createQuery("select u from SaleEntity u where u.providerId="+providerId);
-        if (page != null && maxRecords != null) {
-            q.setFirstResult((page - 1) * maxRecords);
-            q.setMaxResults(maxRecords);
-        }
-        SalePageDTO response = new SalePageDTO();
-        response.setTotalRecords(regCount);
-        response.setRecords(SaleConverter.entity2PersistenceDTOList(q.getResultList()));
-        return response;
+        return SaleConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
     public SaleDTO getSale(Long id) {

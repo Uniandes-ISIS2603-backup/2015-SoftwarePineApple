@@ -21,13 +21,13 @@ public interface IProviderLogic {
 
     public void updateProvider(ProviderDTO detail);
     
-    public List<OfferDTO> getProviderOffers(Long id, Integer page, Integer maxRecords);
+    public List<OfferDTO> getProviderOffers(Long id);
     
-    public List<SaleDTO> getProviderSales(Long id, Integer page, Integer maxRecords);
+    public List<SaleDTO> getProviderSales(Long id);
     
-    public List<NewsDTO> getProviderNews(Long id, Integer page, Integer maxRecords);
+    /*public List<NewsDTO> getProviderNews(Long id, Integer page, Integer maxRecords);*/
     
-    public List<MessageDTO> getProviderMessages(Long id, Integer page, Integer maxRecords);
+    public List<MessageDTO> getProviderMessages(Long id);
     
-    public List<ReportDTO> getProviderReports(Long id, Integer page, Integer maxRecords);
+    /*public List<ReportDTO> getProviderReports(Long id, Integer page, Integer maxRecords);*/
 }
