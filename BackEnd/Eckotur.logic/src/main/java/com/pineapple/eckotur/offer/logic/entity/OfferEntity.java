@@ -8,7 +8,7 @@ import javax.persistence.Id;
 public class OfferEntity {
 
     @Id
-    @GeneratedValue(generator = "Provider")
+    @GeneratedValue(generator = "Offer")
     private Long userId;
 	
     private Integer userType;
