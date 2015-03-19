@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ISaleLogic {
     
-    public SaleDTO createSale(Long providerId, SaleDTO sale);
+    public SaleDTO createSale(SaleDTO detail);
     
     public List<SaleDTO> getSalesByClient(Long providerId, Long clientId);
     

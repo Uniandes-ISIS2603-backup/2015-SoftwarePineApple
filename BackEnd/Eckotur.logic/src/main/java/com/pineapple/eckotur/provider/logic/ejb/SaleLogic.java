@@ -15,8 +15,8 @@ public class SaleLogic implements ISaleLogic {
     @PersistenceContext(unitName = "EckoturPU")
     protected EntityManager entityManager;
 
-    public SaleDTO createSale(Long providerId, SaleDTO sale) {
-        SaleEntity entity = SaleConverter.persistenceDTO2Entity(sale);
+    public SaleDTO createSale(SaleDTO detail) {
+        SaleEntity entity = SaleConverter.persistenceDTO2Entity(detail);
         entityManager.persist(entity);
         return SaleConverter.entity2PersistenceDTO(entity);
     }
