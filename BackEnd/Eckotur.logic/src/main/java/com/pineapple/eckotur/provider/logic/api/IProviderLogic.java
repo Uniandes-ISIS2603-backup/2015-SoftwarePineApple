@@ -1,6 +1,7 @@
 package com.pineapple.eckotur.provider.logic.api;
 
 import com.pineapple.eckotur.message.logic.dto.MessageDTO;
+import com.pineapple.eckotur.news.logic.dto.NewsDTO;
 import com.pineapple.eckotur.offer.logic.dto.OfferDTO;
 import com.pineapple.eckotur.provider.logic.dto.ProviderDTO;
 import com.pineapple.eckotur.provider.logic.dto.ProviderPageDTO;
@@ -25,9 +26,7 @@ public interface IProviderLogic {
     
     public List<SaleDTO> getProviderSales(Long id);
     
-    /*public List<NewsDTO> getProviderNews(Long id, Integer page, Integer maxRecords);*/
+    public List<NewsDTO> getProviderNews(Long id);
     
     public List<MessageDTO> getProviderMessages(Long id);
-    
-    /*public List<ReportDTO> getProviderReports(Long id, Integer page, Integer maxRecords);*/
 }

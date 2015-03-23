@@ -2,6 +2,8 @@ package com.pineapple.eckotur.provider.logic.ejb;
 
 import com.pineapple.eckotur.message.logic.dto.MessageDTO;
 import com.pineapple.eckotur.message.logic.ejb.MessageLogic;
+import com.pineapple.eckotur.news.logic.dto.NewsDTO;
+import com.pineapple.eckotur.news.logic.ejb.NewsLogic;
 import com.pineapple.eckotur.offer.logic.dto.OfferDTO;
 import com.pineapple.eckotur.provider.logic.api.IProviderLogic;
 import com.pineapple.eckotur.provider.logic.converter.ProviderConverter;
@@ -69,5 +71,9 @@ public class ProviderLogic implements IProviderLogic {
 
     public List<MessageDTO> getProviderMessages(Long id) {
         return new MessageLogic().getMessagesTo(id);
+    }
+
+    public List<NewsDTO> getProviderNews(Long id) {
+        return new NewsLogic().getNewsByAuthor(id);
     }
 }
