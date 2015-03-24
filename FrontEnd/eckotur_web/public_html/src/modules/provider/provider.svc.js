@@ -6,23 +6,19 @@
         CRUDBase.extendService(this);
         
         this.getOffers = function(){
-            return this.api.customGET('offers');
+            return this.api.customGET('{{currentRecord.id}}/offers');
         };
         
         this.getSales = function(){
-            return this.api.customGET('sales');
+            return this.api.customGET('{{currentRecord.id}}/sales');
         };
         
         this.getNews = function(){
-            return this.api.customGET('news');
+            return this.api.customGET('{{currentRecord.id}}/news');
         };
         
         this.getMessages = function(){
-            return this.api.customGET('messages');
-        };
-        
-        this.getReports = function(){
-            return this.api.customGET('reports');
+            return this.api.customGET('{{currentRecord.id}}/messages');
         };
     }]);
 })();
