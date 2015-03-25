@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface IClientLogic {
 
-    public ClientDTO createClient(ClientDTO detail);
+    public ClientDTO createClient(ClientDTO detail);//
 
-    public List<ClientDTO> getClients();
+    public List<ClientDTO> getClients();//
 
-    public ClientPageDTO getClients(Integer page, Integer maxRecords);
+    public ClientPageDTO getClients(Integer page, Integer maxRecords);//
 
     public ClientDTO getClient(Long id);
 

@@ -35,6 +35,10 @@ public class ClientLogic implements IClientLogic {
         response.setRecords(ClientConverter.entity2PersistenceDTOList(q.getResultList()));
         return response;
     }
+    public List<ClientDTO> getClients(){
+        Query q = entityManager.createQuery("select u from ClientEntity u");
+        return ClientConverter.entity2PersistenceDTOList(q.getResultList());
+    }
 
     public ClientDTO getClient(Long id) {
         return ClientConverter.entity2PersistenceDTO(entityManager.find(ClientEntity.class, id));

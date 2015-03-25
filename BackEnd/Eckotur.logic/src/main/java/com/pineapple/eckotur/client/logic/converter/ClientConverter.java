@@ -16,7 +16,7 @@ public class ClientConverter {
         	dto.setEmail(entity.getEmail());
         	dto.setLastName(entity.getLastName());
         	dto.setBirthday(entity.getBirthday());
-        	dto.setCreditCard(entity.getCreditCard());
+        	dto.setCreditCard(entity.getCerditcard());
             return dto;
         } else {
             return null;
