@@ -1,9 +1,20 @@
-package co.edu.uniandes.csw.SportGroup.sport.logic.converter;
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.pineapple.eckotur.client.logic.converter;
+import com.pineapple.eckotur.client.logic.dto.ClientDTO;
+import com.pineapple.eckotur.client.logic.entity.ClientEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClientConverter {
+/**
+ *
+ * @author estudiante
+ */
+public class BoughtConverter {
+    
 
     public static ClientDTO entity2PersistenceDTO(ClientEntity entity) {
         if (entity != null) {
@@ -11,10 +22,10 @@ public class ClientConverter {
         	dto.setUserId(entity.getUserId());
         	dto.setUserType(entity.getUserType());
         	dto.setName(entity.getName());
+                dto.setLastName(entity.getLastName());
         	dto.setEmail(entity.getEmail());
-        	dto.setLastName(entity.getLastName());
         	dto.setBirthday(entity.getBirthday());
-        	dto.setCreditCard(entity.getCreditCard());
+        	dto.setCreditCard(entity.getCerditcard());
             return dto;
         } else {
             return null;
@@ -27,8 +38,8 @@ public class ClientConverter {
         	entity.setUserId(dto.getUserId());
         	entity.setUserType(dto.getUserType());
         	entity.setName(dto.getName());
+                entity.setLastName(dto.getLastName());
         	entity.setEmail(dto.getEmail());
-        	entity.setLastName(dto.getLastName());
         	entity.setBirthday(dto.getBirthday());
         	entity.setCreditCard(dto.getCreditCard());
             return entity;
@@ -37,6 +48,7 @@ public class ClientConverter {
         }
     }
 
+    
     public static List<ClientDTO> entity2PersistenceDTOList(List<ClientEntity> entities) {
         List<ClientDTO> dtos = new ArrayList<ClientDTO>();
         for (ClientEntity entity : entities) {
@@ -53,3 +65,6 @@ public class ClientConverter {
         return entities;
     }
 }
+
+    
+
