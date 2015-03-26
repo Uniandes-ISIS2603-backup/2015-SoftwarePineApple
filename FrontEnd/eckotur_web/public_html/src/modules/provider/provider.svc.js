@@ -4,21 +4,17 @@
     providerModule.service('providerService', ['CRUDBase','provider.context', function(CRUDBase, context){
         this.url = context;
         CRUDBase.extendService(this);
-        
-        this.getOffers = function(){
-            return this.api.customGET('{{currentRecord.id}}/offers');
+        this.getOffers = function(id){
+            return this.api.customGET(id+'/offers');
         };
-        
-        this.getSales = function(){
-            return this.api.customGET('{{currentRecord.id}}/sales');
+        this.getSales = function(id){
+            return this.api.customGET(id+'/sales');
         };
-        
-        this.getNews = function(){
-            return this.api.customGET('{{currentRecord.id}}/news');
-        };
-        
-        this.getMessages = function(){
-            return this.api.customGET('{{currentRecord.id}}/messages');
+        this.getNews = function(id){
+            return this.api.customGET(id+'/news');
+        };    
+        this.getMessages = function(id){
+            return this.api.customGET(id+'/messages');
         };
     }]);
 })();
