@@ -1,4 +1,4 @@
-﻿<html lang="en" ng-app="mainApp"><head>
+﻿<html lang="en"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -20,30 +20,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-
-    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="style.css" type="text/css"/>
-
-    
-        <script src="../src/assets/libs/jquery-1.11.2.min.js"></script>
-        <script src="../src/assets/libs/underscore-min.js"></script>
-        <script src="../src/assets/libs/angular.min.js"></script>
-        <script src="../src/assets/libs/angular-mocks.js"></script>
-        <script src="../src/assets/libs/angular-route.min.js"></script>
-        <script src="../src/assets/libs/restangular.min.js"></script>
-        <script src="../src/app.js"></script>
-
-        <script src="../src/shared/crud/crud.mod.js"></script>
-        <script src="../src/shared/crud/crud.svc.js"></script>
-        <script src="../src/shared/mocks/mock.mod.js"></script>
-        <script src="../src/shared/mocks/mock.svc.js"></script>
-        
-        <script src="eckotur_web/public_html/src/modules/provider/provider.mod.js"></script>
-        <script src="eckotur_web/public_html/src/modules/provider/provider.ctrl.js"></script>
-        <script src="eckotur_web/public_html/src/modules/provider/provider.svc.js"></script>
-        
 </head><!--/head-->
-
 
 <body>
 	<header id="header"><!--header-->
@@ -107,7 +84,7 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
+								<li><a href="blog.html"><i class="fa fa-user"></i> Account</a></li>
 								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="cart.html" class="active"><i class="fa fa-shopping-cart"></i> Cart</a></li>
@@ -143,13 +120,10 @@
 										<li><a href="login.html">Login</a></li> 
                                     </ul>
                                 </li> 
-								<li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-										<li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
+								<li class="dropdown"><a href="blog.html">Profile</a>
+                                    
                                 </li> 
-								<li><a href="404.html">404</a></li>
+								<li></li>
 								<li><a href="contact-us.html">Contact</a></li>
 							</ul>
 						</div>
@@ -172,12 +146,7 @@
 				  <li class="active">Shopping Cart</li>
 				</ol>
 			</div>
-                    
-                    
-                 
-                    <div ng-controller="offerCtrl as offerCtrl">
-                                           
-			<div class="table-responsive cart_info" >
+			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
@@ -190,18 +159,16 @@
 						</tr>
 					</thead>
 					<tbody>
-                                        
-                                            
-                                            <tr ng-repeat="offer in currentRecord.offers">
+						<tr>
 							<td class="cart_product">
-								<a href=""><img src= offer.image alt=""></a>
+								<a href=""><img src="images/cart/centromundo.jpg" alt="" style ="width:200px"></a>
 							</td>
 							<td class="cart_description">
-								<h4><a href="">{{offer.offer}}</a></h4>
-								<p>Web ID: {{offer.id}}</p>
+								<h4><a href="">Viaje al centro de la tierra</a></h4>
+								<p>Web ID: 1089772</p>
 							</td>
 							<td class="cart_price">
-								<p>${{offer.price}}</p>
+								<p>$500</p>
 							</td>
 							<td class="cart_quantity">
 								<div class="cart_quantity_button">
@@ -211,20 +178,68 @@
 								</div>
 							</td>
 							<td class="cart_total">
-								<p class="cart_total_price">${{offer.price}}</p>
+								<p class="cart_total_price">$500</p>
 							</td>
 							<td class="cart_delete">
 								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
-                                        
+
+						<tr>
+							<td class="cart_product">
+								<a href=""><img src="images/cart/parapente.jpg" alt="" style ="width:200px"></a>
+							</td>
+							<td class="cart_description">
+								<h4><a href="">Parapente ecoPlus</a></h4>
+								<p>Web ID: 1089772</p>
+							</td>
+							<td class="cart_price">
+								<p>$150</p>
+							</td>
+							<td class="cart_quantity">
+								<div class="cart_quantity_button">
+									<a class="cart_quantity_up" href=""> + </a>
+									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+									<a class="cart_quantity_down" href=""> - </a>
+								</div>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">$150</p>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<td class="cart_product">
+								<a href=""><img src="images/cart/saltodelangel.jpg" alt="" style ="width:200px"></a>
+							</td>
+							<td class="cart_description">
+								<h4><a href="">Caída libre en El Salto del Ángel</a></h4>
+								<p>Web ID: 1089772</p>
+							</td>
+							<td class="cart_price">
+								<p>$85</p>
+							</td>
+							<td class="cart_quantity">
+								<div class="cart_quantity_button">
+									<a class="cart_quantity_up" href=""> + </a>
+									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+									<a class="cart_quantity_down" href=""> - </a>
+								</div>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">$85</p>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>
-                    </div>
 		</div>
 	</section> <!--/#cart_items-->
-       
 
 	<section id="do_action">
 		<div class="container">
@@ -310,7 +325,7 @@
 					<div class="col-sm-2">
 						<div class="companyinfo">
 							<h2><span>e</span>-shopper</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+							<p>Eckotur es your #1 gateway for ecological tourism and adventure; Enjoy</p>
 						</div>
 					</div>
 					<div class="col-sm-7">
@@ -395,7 +410,7 @@
 								<li><a href="">Contact Us</a></li>
 								<li><a href="">Order Status</a></li>
 								<li><a href="">Change Location</a></li>
-								<li><a href="">FAQ’s</a></li>
+								<li><a href="">FAQ?s</a></li>
 							</ul>
 						</div>
 					</div>
@@ -453,7 +468,7 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+					<p class="pull-left">Copyright Š 2013 E-SHOPPER Inc. All rights reserved.</p>
 					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
 				</div>
 			</div>
@@ -469,5 +484,4 @@
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
 
-</body>
-</html>
+</body></html>
