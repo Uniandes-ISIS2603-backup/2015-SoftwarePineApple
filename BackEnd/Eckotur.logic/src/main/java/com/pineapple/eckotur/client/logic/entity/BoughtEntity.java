@@ -9,6 +9,8 @@ package com.pineapple.eckotur.client.logic.entity;
  *
  * @author estudiante
  */
-public class BoughtEntity {
+public class BoughtEntity
+{
+    
     
 }
