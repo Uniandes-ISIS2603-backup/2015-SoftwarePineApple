@@ -2,21 +2,47 @@
     var providerModule = angular.module('providerModule');
     providerModule.controller('providerCtrl', ['$scope', 'providerService', 'salesService', function ($scope, providerService, salesService) {
         providerService.extendCtrl(this, $scope);
+        $scope.currentProviderRecord={};
+        $scope.currentProviderRecord.userId=1;
+        $scope.currentProviderRecord.userType=2;
+        $scope.currentProviderRecord.name='Provetour';
+        $scope.currentProviderRecord.email='provetour@provetour.com';
+        $scope.currentProviderRecord.webpage='provetour.com';
+        $scope.currentProviderRecord.description='El primer proveedor de Eckotur';
+        $scope.currentProviderRecord.bankAccount=110232;
+        $scope.currentProviderRecord.answersSales=[];
+        $scope.sales=[];
+        $scope.currentProviderRecord.offers=[];
+        $scope.currentProviderRecord.messages=[];
+        $scope.currentProviderRecord.news=[];
+        salesService.fetchRecords().then(function(data){
+            $scope.sales=data;
+        });
         this.saveOffer = function(offer){
             offer.nSales=0;
         };
-        salesService.fetchRecords().then(function(data){
-            $scope.salesRecords = data;
-        });
         this.getSales = function(){
-            for (var i in $scope.salesRecords) {
-                if ($scope.salesRecords[i].providerId===$scope.currentRecord.userId) {
-                    return $scope.salesRecords[i].name;
+            for(var i=0;i<$scope.sales.length;i++){
+                if($scope.sales[i].providerId===$scope.currentProviderRecord.name){
+                    alert(i);
+                    $scope.currentProviderRecord.answersSales.push($scope.sales[i]);
                 }
             }
-            return;
         };
-        
+        this.getSalesByClient = function(clientId){
+            for(var i=0;i<$scope.sales.length;i++){
+                if($scope.sales[i].providerId===$scope.currentProviderRecord.name&&$scope.sales[i].clientId===clientId){
+                    $scope.currentProviderRecord.answersSales.push($scope.sales[i]);
+                }
+            }
+        };
+        this.getSalesByTransaction = function(transactionId){
+            for(var i=0;i<$scope.sales.length;i++){
+                if($scope.sales[i].providerId===$scope.currentProviderRecord.name&&$scope.sales[i].clientId===transactionId){
+                    $scope.currentProviderRecord.answersSales.push($scope.sales[i]);
+                }
+            }
+        };
         /*$scope.currentRecord.id=1;
         $scope.currentRecord.sales=[];
         $scope.currentRecord.offers=[];
