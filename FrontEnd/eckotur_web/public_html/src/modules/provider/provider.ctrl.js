@@ -16,15 +16,16 @@
         $scope.currentProviderRecord.messages=[];
         $scope.currentProviderRecord.news=[];
         salesService.fetchRecords().then(function(data){
+            alert('Esto primero');
             $scope.sales=data;
         });
         this.saveOffer = function(offer){
             offer.nSales=0;
         };
         this.getSales = function(){
+            alert('Esto despues');
             for(var i=0;i<$scope.sales.length;i++){
                 if($scope.sales[i].providerId===$scope.currentProviderRecord.name){
-                    alert(i);
                     $scope.currentProviderRecord.answersSales.push($scope.sales[i]);
                 }
             }

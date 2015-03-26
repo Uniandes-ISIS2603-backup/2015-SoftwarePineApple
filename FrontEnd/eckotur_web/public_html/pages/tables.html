@@ -410,6 +410,14 @@
                                 All My Sales
                             </div>
                             <div ng-controller="providerCtrl as providerCtrl">
+                                <form>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                          <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                                          <input type="text" class="form-control" placeholder="Search by Client" ng-model="byClient">
+                                        </div>      
+                                    </div>
+                                </form>
                                 <a id="allMySales" ng-click="providerCtrl.getSales()"></a>
                                 <div class="panel-body">
                                     <div class="dataTable_wrapper">
@@ -427,7 +435,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr ng-repeat="answer in currentProviderRecord.answersSales">
+                                                    <tr ng-repeat="answer in currentProviderRecord.answersSales|filter:byClient">
                                                         <td>{{answer.transactionId}}</td>
                                                         <td>{{answer.clientId}}</td>
                                                         <td>{{answer.offerId}}</td>
