@@ -1,5 +1,5 @@
 (function () {
-    var providerModule = angular.module('providerModule', ['CrudModule', 'MockModule']);
+    var providerModule = angular.module('providerModule', ['CrudModule', 'MockModule', 'salesModule']);
 
     providerModule.constant('provider.context', 'providers');
 
