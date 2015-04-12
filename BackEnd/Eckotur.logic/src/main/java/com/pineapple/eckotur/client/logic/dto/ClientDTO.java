@@ -1,5 +1,6 @@
 package com.pineapple.eckotur.client.logic.dto;
 
+import java.util.ArrayList;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -18,6 +19,8 @@ public class ClientDTO {
     private String birthday;
 
     private Integer creditCard;
+    
+    private ArrayList cart;
 
     public Long getUserId(){
             return userId;
@@ -49,6 +52,10 @@ public class ClientDTO {
             return creditCard;
     }
 
+    public ArrayList getCart()
+    {
+        return cart;
+    }
 
 
     public void setUserId(Long userId){
@@ -78,6 +85,11 @@ public class ClientDTO {
 
     public void setCreditCard(int nCreditCard){
             this.creditCard=nCreditCard;
+    }
+    
+    public void setCart(ArrayList nCart)
+    {
+        this.cart=nCart;
     }
 }
     

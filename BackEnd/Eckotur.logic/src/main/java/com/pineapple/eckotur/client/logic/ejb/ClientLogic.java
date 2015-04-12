@@ -43,7 +43,9 @@ public class ClientLogic implements IClientLogic {
     public ClientDTO getClient(Long id) {
         return ClientConverter.entity2PersistenceDTO(entityManager.find(ClientEntity.class, id));
     }
-
+   
+    
+   
     public void deleteClient(Long id) {
         ClientEntity entity = entityManager.find(ClientEntity.class, id);
         entityManager.remove(entity);
@@ -53,4 +55,10 @@ public class ClientLogic implements IClientLogic {
         ClientEntity entity = entityManager.merge(ClientConverter.persistenceDTO2Entity(client));
         ClientConverter.entity2PersistenceDTO(entity);
     }
+
+    public void getCart(Long id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
 }

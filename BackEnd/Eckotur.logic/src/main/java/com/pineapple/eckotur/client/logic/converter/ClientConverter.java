@@ -33,6 +33,7 @@ public class ClientConverter {
         	entity.setLastName(dto.getLastName());
         	entity.setBirthday(dto.getBirthday());
         	entity.setCreditCard(dto.getCreditCard());
+                entity.setClientCart(dto.getCart());
             return entity;
         } else {
             return null;

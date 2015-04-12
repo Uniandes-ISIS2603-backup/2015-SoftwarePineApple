@@ -4,7 +4,8 @@ import com.pineapple.eckotur.client.logic.dto.ClientDTO;
 import com.pineapple.eckotur.client.logic.dto.ClientPageDTO;
 import java.util.List;
 
-public interface IClientLogic {
+public interface IClientLogic 
+{
 
     public ClientDTO createClient(ClientDTO detail);//
 
@@ -17,4 +18,6 @@ public interface IClientLogic {
     public void deleteClient(Long id);
 
     public void updateClient(ClientDTO detail);
+    
+    public void getCart (Long id);
 }

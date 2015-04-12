@@ -1,5 +1,6 @@
 package com.pineapple.eckotur.client.logic.entity;
 
+import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,11 +23,18 @@ public class ClientEntity {
     private String birthday;
 
     private Integer creditCard;
+    
+    private ArrayList cart;
 
     public Long getUserId(){
             return userId;
     }
 
+    public ArrayList gerUserCart()
+    {
+        return cart;
+    }
+    
     public Integer getUserType(){
             return userType;
     }
@@ -80,5 +88,10 @@ public class ClientEntity {
 
     public void setCreditCard(Integer nCreditCard){
             this.creditCard=nCreditCard;
+    }
+    
+    public void setClientCart(ArrayList Ncart)
+    {
+        this.cart=Ncart;
     }
 }

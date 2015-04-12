@@ -51,5 +51,8 @@ public class ClientService {
     public void updateclient(@PathParam("id") Long id, ClientDTO client) {
         clientLogicService.updateClient(client);
     }
-
+    
+   
+    
+   
 }
