@@ -7,11 +7,15 @@ import com.pineapple.eckotur.message.logic.dto.MessagePageDTO;
 import com.pineapple.eckotur.message.logic.entity.MessageEntity;
 
 import java.util.List;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+@Stateless 
+@LocalBean
 public class MessageLogic implements IMessageLogic {
 
     @PersistenceContext(unitName = "EckoturPU")

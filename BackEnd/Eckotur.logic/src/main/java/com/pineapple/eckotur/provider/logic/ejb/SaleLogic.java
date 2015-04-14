@@ -5,10 +5,14 @@ import com.pineapple.eckotur.provider.logic.converter.SaleConverter;
 import com.pineapple.eckotur.provider.logic.dto.SaleDTO;
 import com.pineapple.eckotur.provider.logic.entity.SaleEntity;
 import java.util.List;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+@Stateless 
+@LocalBean
 public class SaleLogic implements ISaleLogic {
 
     @PersistenceContext(unitName = "EckoturPU")

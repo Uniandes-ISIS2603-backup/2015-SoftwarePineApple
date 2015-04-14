@@ -6,10 +6,14 @@ import com.pineapple.eckotur.news.logic.dto.NewsDTO;
 import com.pineapple.eckotur.news.logic.dto.NewsPageDTO;
 import com.pineapple.eckotur.news.logic.entity.NewsEntity;
 import java.util.List;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+@Stateless 
+@LocalBean
 public class NewsLogic implements INewsLogic {
     @PersistenceContext(unitName = "EckoturPU")
     protected EntityManager entityManager;

@@ -12,10 +12,14 @@ import com.pineapple.eckotur.provider.logic.dto.ProviderPageDTO;
 import com.pineapple.eckotur.provider.logic.dto.SaleDTO;
 import com.pineapple.eckotur.provider.logic.entity.ProviderEntity;
 import java.util.List;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+@Stateless 
+@LocalBean
 public class ProviderLogic implements IProviderLogic {
 
     @PersistenceContext(unitName = "EckoturPU")

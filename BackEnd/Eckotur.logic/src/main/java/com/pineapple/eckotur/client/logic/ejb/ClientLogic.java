@@ -6,10 +6,14 @@ import com.pineapple.eckotur.client.logic.dto.ClientPageDTO;
 import com.pineapple.eckotur.client.logic.converter.ClientConverter;
 import com.pineapple.eckotur.client.logic.entity.ClientEntity;
 import java.util.List;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+@Stateless 
+@LocalBean
 public class ClientLogic implements IClientLogic {
 
     @PersistenceContext(unitName = "EckoturPU")
