@@ -6,10 +6,14 @@ import com.pineapple.eckotur.offer.logic.dto.OfferPageDTO;
 import com.pineapple.eckotur.offer.logic.converter.CatalogConverter;
 import com.pineapple.eckotur.offer.logic.entity.OfferEntity;
 import java.util.List;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+@Stateless 
+@LocalBean
 public class OfferLogic implements ICatalogLogic {
     @PersistenceContext(unitName = "EckoturPU")
     protected EntityManager entityManager;

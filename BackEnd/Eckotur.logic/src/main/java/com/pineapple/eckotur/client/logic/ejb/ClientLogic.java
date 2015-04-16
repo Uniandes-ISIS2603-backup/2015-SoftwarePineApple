@@ -6,10 +6,14 @@ import com.pineapple.eckotur.client.logic.dto.ClientPageDTO;
 import com.pineapple.eckotur.client.logic.converter.ClientConverter;
 import com.pineapple.eckotur.client.logic.entity.ClientEntity;
 import java.util.List;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+@Stateless 
+@LocalBean
 public class ClientLogic implements IClientLogic {
 
     @PersistenceContext(unitName = "EckoturPU")
@@ -43,7 +47,9 @@ public class ClientLogic implements IClientLogic {
     public ClientDTO getClient(Long id) {
         return ClientConverter.entity2PersistenceDTO(entityManager.find(ClientEntity.class, id));
     }
-
+   
+    
+   
     public void deleteClient(Long id) {
         ClientEntity entity = entityManager.find(ClientEntity.class, id);
         entityManager.remove(entity);
@@ -53,4 +59,10 @@ public class ClientLogic implements IClientLogic {
         ClientEntity entity = entityManager.merge(ClientConverter.persistenceDTO2Entity(client));
         ClientConverter.entity2PersistenceDTO(entity);
     }
+
+    public void getCart(Long id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
 }
