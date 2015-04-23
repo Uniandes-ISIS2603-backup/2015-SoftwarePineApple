@@ -8,9 +8,9 @@
 (function () {
     var clientModule = angular.module('clientModule', ['CrudModule', 'MockModule','loginModule']);
 
-    clientModule.constant('client.context', 'client');
+   clientModule.constant('client.skipMock', true);
 
-    clientModule.config(['client.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
-            urlsProvider.registerUrl(context);
-        }]);
-})();
+     clientModule.config(['client.context', 'MockModule.urlsProvider','client.skipMock', function (context, urlsProvider, skipMock) {
+             urlsProvider.registerUrl(context, skipMock);
+         }]);
+     });

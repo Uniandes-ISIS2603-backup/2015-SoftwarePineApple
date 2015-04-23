@@ -1,10 +1,9 @@
 (function () {
     var loginModule = angular.module('loginModule', ['CrudModule', 'MockModule']);
 
-    loginModule.constant('login.context', 'login');
-
-    loginModule.config(['login.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
-            urlsProvider.registerUrl(context);
-        }]);
-})();
+    loginModule.constant('country.skipMock', true);
+     loginModule.config(['country.context', 'MockModule.urlsProvider','country.skipMock', function (context, urlsProvider, skipMock) {
+             urlsProvider.registerUrl(context, skipMock);
+         }]);
+     });
 

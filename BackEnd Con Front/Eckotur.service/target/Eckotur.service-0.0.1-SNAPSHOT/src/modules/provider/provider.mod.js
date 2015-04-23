@@ -1,10 +1,9 @@
 (function () {
     var providerModule = angular.module('providerModule', ['CrudModule', 'MockModule', 'salesModule']);
 
-    providerModule.constant('provider.context', 'providers');
+   providerModule.constant('provider.skipMock', true);
 
-    providerModule.config(['provider.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
-        urlsProvider.registerUrl(context);
-    }]);
-})();
+     providerModule.config(['provider.context', 'MockModule.urlsProvider','provider.skipMock', function (context, urlsProvider, skipMock) {
+           urlsProvider.registerUrl(context, skipMock);         }]);
 
+});
