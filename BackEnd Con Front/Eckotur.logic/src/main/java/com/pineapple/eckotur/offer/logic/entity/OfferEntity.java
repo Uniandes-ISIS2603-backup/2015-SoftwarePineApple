@@ -30,11 +30,9 @@ public class OfferEntity {
     public Integer getUserType(){
             return userType;
     }
-
     public String getName(){
             return name;
     }
-
     public String getEmail(){
             return email;
     }
@@ -50,6 +48,7 @@ public class OfferEntity {
     public String getBankAccount(){
             return bankAccount;
     }
+    
 
     public void setUserId(Long userId){
             this.userId=userId;

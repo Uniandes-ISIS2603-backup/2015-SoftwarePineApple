@@ -5,16 +5,16 @@ import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2015-03-19T10:44:09")
+@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2015-04-23T08:08:30")
 @StaticMetamodel(SaleEntity.class)
 public class SaleEntity_ { 
 
+    public static volatile SingularAttribute<SaleEntity, Long> transactionId;
+    public static volatile SingularAttribute<SaleEntity, Long> value;
+    public static volatile SingularAttribute<SaleEntity, Long> providerId;
+    public static volatile SingularAttribute<SaleEntity, Integer> quantity;
     public static volatile SingularAttribute<SaleEntity, Date> date;
     public static volatile SingularAttribute<SaleEntity, Long> clientId;
-    public static volatile SingularAttribute<SaleEntity, Integer> quantity;
-    public static volatile SingularAttribute<SaleEntity, Long> providerId;
     public static volatile SingularAttribute<SaleEntity, Long> offerId;
-    public static volatile SingularAttribute<SaleEntity, Long> value;
-    public static volatile SingularAttribute<SaleEntity, Long> transactionId;
 
 }

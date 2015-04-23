@@ -11,19 +11,23 @@ public class OfferDTO {
 	
 	private String name;
 	
-	private String type;
+	private Integer type;
 	
 	private String webpage;
 	
 	private String description;
 	
 	private String providerName;
-	
+        
+        private String email;
+        
+        private String bankAccount;
+        
 	public Long getId(){
 		return id;
 	}
 	
-	public String getType(){
+	public Integer getType(){
 		return type;
 	}
 	
@@ -38,13 +42,21 @@ public class OfferDTO {
 	public String getDescription(){
 		return description;
 	}
+        
+        public String getEmail(){
+            return email;
+        }
+        
+        public String getBankAccount(){
+            return bankAccount;
+        }
     
 
 	public void setId(Long Id){
 		this.id=Id;
 	}
 	
-	public void setType(String Type){
+	public void setType(Integer Type){
 		this.type=Type;
 	}
 	
@@ -60,6 +72,14 @@ public class OfferDTO {
 	public void setDescription(String description){
 		this.description=description;
 	}
+        
+        public void setEmail(String email){
+            this.email=email;
+        }
+        
+        public void setBankAccount(String bankAccount){
+            this.bankAccount = bankAccount;
+        }
     
 	
 }
