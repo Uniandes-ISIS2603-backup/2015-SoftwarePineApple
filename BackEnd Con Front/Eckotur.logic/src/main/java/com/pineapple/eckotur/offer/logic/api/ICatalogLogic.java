@@ -11,5 +11,11 @@ public interface ICatalogLogic {
     public OfferPageDTO getOffers(Integer page, Integer maxRecords);
 
     public OfferDTO getOffer(Long id);
+    
+    public OfferDTO createOffer(OfferDTO offer);
 
+    public void deleteOffer(Long id);
+    
+    public void updateOffer(OfferDTO offer);
 }
+

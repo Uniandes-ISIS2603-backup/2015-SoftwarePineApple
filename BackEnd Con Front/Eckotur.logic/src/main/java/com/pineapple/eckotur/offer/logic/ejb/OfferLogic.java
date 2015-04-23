@@ -41,4 +41,21 @@ public class OfferLogic implements ICatalogLogic {
     public OfferDTO getOffer(Long id) {
         return CatalogConverter.entity2PersistenceDTO(entityManager.find(OfferEntity.class, id));
     }
+
+ 
+    public OfferDTO createOffer(OfferDTO offer) {
+        OfferEntity entity = CatalogConverter.persistenceDTO2Entity(offer);
+        entityManager.persist(entity);
+        return CatalogConverter.entity2PersistenceDTO(entity);
+    }
+    
+     public void deleteOffer(Long id) {
+        OfferEntity entity = entityManager.find(OfferEntity.class, id);
+        entityManager.remove(entity);
+    }
+     
+     public void updateOffer(OfferDTO offer) {
+        OfferEntity entity = entityManager.merge(CatalogConverter.persistenceDTO2Entity(offer));
+        CatalogConverter.entity2PersistenceDTO(entity);
+    }
 }

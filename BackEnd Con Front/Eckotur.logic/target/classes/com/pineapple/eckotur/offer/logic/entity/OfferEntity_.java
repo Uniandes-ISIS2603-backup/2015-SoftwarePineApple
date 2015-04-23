@@ -4,16 +4,16 @@ import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2015-04-21T10:23:23")
+@Generated(value="EclipseLink-2.5.0.v20130507-rNA", date="2015-04-23T08:08:30")
 @StaticMetamodel(OfferEntity.class)
 public class OfferEntity_ { 
 
-    public static volatile SingularAttribute<OfferEntity, String> bankAccount;
-    public static volatile SingularAttribute<OfferEntity, String> name;
-    public static volatile SingularAttribute<OfferEntity, String> description;
-    public static volatile SingularAttribute<OfferEntity, Integer> userType;
-    public static volatile SingularAttribute<OfferEntity, String> webpage;
-    public static volatile SingularAttribute<OfferEntity, Long> userId;
     public static volatile SingularAttribute<OfferEntity, String> email;
+    public static volatile SingularAttribute<OfferEntity, String> webpage;
+    public static volatile SingularAttribute<OfferEntity, String> description;
+    public static volatile SingularAttribute<OfferEntity, Long> userId;
+    public static volatile SingularAttribute<OfferEntity, String> name;
+    public static volatile SingularAttribute<OfferEntity, Integer> userType;
+    public static volatile SingularAttribute<OfferEntity, String> bankAccount;
 
 }
