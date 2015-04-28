@@ -10,9 +10,15 @@ public class CatalogConverter {
     public static OfferDTO entity2PersistenceDTO(OfferEntity entity) {
         if (entity != null) {
         	OfferDTO dto = new OfferDTO();	
+                
         	dto.setName(entity.getName());
         	dto.setWebpage(entity.getWebpage());
         	dto.setDescription(entity.getDescription());
+                
+        	dto.setId(entity.getUserId());
+                dto.setType(entity.getUserType());
+                dto.setEmail(entity.getEmail());
+                dto.setBankAccount(entity.getBankAccount());
             return dto;
         } else {
             return null;
@@ -22,10 +28,14 @@ public class CatalogConverter {
     public static OfferEntity persistenceDTO2Entity(OfferDTO dto) {
         if (dto != null) {
         	OfferEntity entity = new OfferEntity();
+                
         	entity.setUserId(dto.getId());
         	entity.setName(dto.getName());
         	entity.setWebpage(dto.getWebpage());
         	entity.setDescription(dto.getDescription());
+                entity.setBankAccount(dto.getBankAccount());
+                entity.setUserType(dto.getType());
+                entity.setEmail(dto.getEmail());
             return entity;
         } else {
             return null;
