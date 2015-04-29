@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module();
+    var app = angular.module('loginModule');
 
     app.controller('loginCtrl', ['$scope', 'CRUDUtils', 'login.context', function ($scope, CRUDUtils, context) {
             this.url = context;
