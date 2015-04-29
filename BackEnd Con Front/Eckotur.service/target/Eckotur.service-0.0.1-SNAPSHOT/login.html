@@ -112,13 +112,13 @@
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
 						<form action="" ng-submit="loginCtrl.reg(currentRecord)">
-                                                    <input id="usuario" type="hidden" ng-model="currentRecord.id"/>
-							<input type="text" placeholder="Name" ng-model="currentRecord.name">
+                                                    <input id="usuarioID" type="hidden" ng-model="currentRecord.id"/>
+							<input id="nombre" type="text" placeholder="Name" ng-model="currentRecord.name">
                                                         <input id="usuario" type="text" placeholder="Usuario" ng-model="currentRecord.usuario">
-							<input type="email" placeholder="Email Address"ng-model="currentRecord.email">
-							<input type="password" placeholder="Password"ng-model="currentRecord.password">
-                                                        <input type="password" placeholder="Confirm Password"ng-model="currentRecord.passwordc">
-							<button id = "registro" type="submit" class="btn btn-default">Signup</button>
+							<input id="correo" type="email" placeholder="Email Address"ng-model="currentRecord.email">
+							<input id="pass" type="password" placeholder="Password"ng-model="currentRecord.password">
+                                                        <input id="pass2" type="password" placeholder="Confirm Password"ng-model="currentRecord.passwordc">
+							<button id = "btnRegistro" type="submit" class="btn btn-default">Signup</button>
 						</form>
 					</div><!--/sign up form-->
 				</div>

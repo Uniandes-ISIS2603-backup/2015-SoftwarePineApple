@@ -5,6 +5,7 @@
  */
 package com.pineapple.eckotur.web.test;
 
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
@@ -18,7 +19,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.junit.runners.MethodSorters;
 import org.junit.FixMethodOrder;
-import org.junit.Test;public class SportClubTest {
+import org.junit.Test;
+
+/**
+ *
+ * @author JuanCruz
+ */
+public class RegisterTest {
         // Es la instancia inicial del web driver que controlará el navegador firefox
         private static WebDriver driver;
         // url en el cual se aloja la página web (en este caso localhost:8080)
@@ -54,7 +61,7 @@ import org.junit.Test;public class SportClubTest {
         
         
         @Test
-    public void t1Login() throws Exception {
+    public void t1Register() throws Exception {
  
       
         boolean success = false;
@@ -67,28 +74,71 @@ import org.junit.Test;public class SportClubTest {
          * Comando que busca el elemento 'name1' en el html actual. Ver ids en country.tpl.html
          * Posteriormente limpia su contenido (comando clear).
          */
-        driver.findElement(By.id("userName")).clear();
+        driver.findElement(By.id("nombre")).clear();
         /**
          * Comando que simula la escritura de un valor en el elemento(sendKeys)
          * con el String de parámetro sobre // el elemento encontrado.
          */
-        driver.findElement(By.id("userName")).sendKeys("usuario");
+        driver.findElement(By.id("nombre")).sendKeys("Juan");
  
-         /**
-         * Comando que busca el elemento 'poputation' en el html actual. Ver ids en country.tpl.html
+        
+        /**
+         * Comando que busca el elemento 'name1' en el html actual. Ver ids en country.tpl.html
          * Posteriormente limpia su contenido (comando clear).
          */
-        driver.findElement(By.id("Password")).clear();
+        driver.findElement(By.id("usuario")).clear();
         /**
          * Comando que simula la escritura de un valor en el elemento(sendKeys)
          * con el String de parámetro sobre // el elemento encontrado.
          */
-        driver.findElement(By.id("Password")).sendKeys("contrasena");
+        driver.findElement(By.id("usuario")).sendKeys("usuario");
+ 
+        
+        
+        /**
+         * Comando que busca el elemento 'name1' en el html actual. Ver ids en country.tpl.html
+         * Posteriormente limpia su contenido (comando clear).
+         */
+        driver.findElement(By.id("correo")).clear();
+        /**
+         * Comando que simula la escritura de un valor en el elemento(sendKeys)
+         * con el String de parámetro sobre // el elemento encontrado.
+         */
+        driver.findElement(By.id("correo")).sendKeys("usuario@gmail.com");
+ 
+        
+         /**
+         * Comando que busca el elemento 'name1' en el html actual. Ver ids en country.tpl.html
+         * Posteriormente limpia su contenido (comando clear).
+         */
+        driver.findElement(By.id("pass")).clear();
+        /**
+         * Comando que simula la escritura de un valor en el elemento(sendKeys)
+         * con el String de parámetro sobre // el elemento encontrado.
+         */
+        driver.findElement(By.id("pass")).sendKeys("contrasena");
+ 
+        
+         /**
+         * Comando que busca el elemento 'name1' en el html actual. Ver ids en country.tpl.html
+         * Posteriormente limpia su contenido (comando clear).
+         */
+        driver.findElement(By.id("pass2")).clear();
+        /**
+         * Comando que simula la escritura de un valor en el elemento(sendKeys)
+         * con el String de parámetro sobre // el elemento encontrado.
+         */
+        driver.findElement(By.id("pass2")).sendKeys("contrasena");
+ 
+        
+        
+        
+       
         /**
          * Comando que busca el boton Save y luego hace click
          * Comando que duerme el Thread del test por 2 segundos
          */
-        driver.findElement(By.id("btnlogin")).click();
+        driver.findElement(By.id("btnRegistro")).click();
         Thread.sleep(2000);
  
  
@@ -108,4 +158,3 @@ import org.junit.Test;public class SportClubTest {
     }
         
 }
- 
