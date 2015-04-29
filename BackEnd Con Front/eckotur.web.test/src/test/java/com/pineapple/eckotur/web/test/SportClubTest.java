@@ -32,7 +32,7 @@ import org.junit.Test;public class SportClubTest {
         public static void setUp() throws Exception {
             driver = new FirefoxDriver();
         // se define el url base del proyecto web
-            baseUrl = "http://localhost:8080/login.html";
+            baseUrl = "http://localhost:8080/Eckotur.service/login.html";
         /* Indica cuanto se espera para la respuesta de cualquier comando realizado hacia el navegador*/
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         }
