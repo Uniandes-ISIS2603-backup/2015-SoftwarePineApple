@@ -5,5 +5,6 @@
 
     providerModule.config(['offer.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
         urlsProvider.registerUrl(context);
+        
     }]);
 })();
