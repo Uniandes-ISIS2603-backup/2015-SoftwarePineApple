@@ -9,72 +9,72 @@ public class OfferEntity {
 
     @Id
     @GeneratedValue(generator = "Offer")
-    private Long userId;
+    private Long Id;
 	
-    private Integer userType;
+    private Long providerId;
 
     private String name;
 
-    private String email;
-
-    private String webpage;
-
     private String description;
 
-    private String bankAccount;
+    private String location;
 
-    public Long getUserId(){
-            return userId;
+    private String date;
+
+    private Long price;
+
+    public Long getId(){
+            return Id;
     }
 
-    public Integer getUserType(){
-            return userType;
+    public Long getProviderId(){
+            return providerId;
     }
     public String getName(){
             return name;
     }
-    public String getEmail(){
-            return email;
-    }
-
-    public String getWebpage(){
-            return webpage;
-    }
-
     public String getDescription(){
             return description;
     }
 
-    public String getBankAccount(){
-            return bankAccount;
+    public String getDate(){
+            return date;
+    }
+
+    public Long getPrice(){
+            return price;
+    }
+
+    public String getLocation(){
+            return location;
     }
     
 
-    public void setUserId(Long userId){
-            this.userId=userId;
+    public void setId(Long Id){
+            this.Id=Id;
     }
 
-    public void setUserType(Integer userType){
-            this.userType=userType;
+    public void setProviderId(Long providerId){
+            this.providerId=providerId;
     }
 
     public void setName(String name){
             this.name=name;
     }
 
-    public void setEmail(String email){
-            this.email=email;
+    public void setLocation(String location){
+            this.location=location;
     }
 
-    public void setWebpage(String webpage){
-            this.webpage=webpage;
+    public void setPrice(Long price){
+            this.price=price;
     }
 
     public void setDescription(String description){
             this.description=description;
     }
 
-    public void setBankAccount(String bankAccount){
-            this.bankAccount=bankAccount;
+    public void setDate(String date){
+            this.date=date;
     }
 }
