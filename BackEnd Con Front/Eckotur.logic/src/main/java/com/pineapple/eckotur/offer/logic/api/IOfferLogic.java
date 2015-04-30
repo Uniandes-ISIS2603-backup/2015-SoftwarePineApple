@@ -4,7 +4,7 @@ import com.pineapple.eckotur.offer.logic.dto.OfferDTO;
 import com.pineapple.eckotur.offer.logic.dto.OfferPageDTO;
 import java.util.List;
 
-public interface ICatalogLogic {
+public interface IOfferLogic {
 
     public List<OfferDTO> getOffers();
 

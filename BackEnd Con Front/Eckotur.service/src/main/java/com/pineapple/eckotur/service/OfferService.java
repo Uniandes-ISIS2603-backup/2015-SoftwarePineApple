@@ -1,6 +1,6 @@
 package com.pineapple.eckotur.service;
 
-import com.pineapple.eckotur.offer.logic.api.ICatalogLogic;
+import com.pineapple.eckotur.offer.logic.api.IOfferLogic;
 import com.pineapple.eckotur.offer.logic.dto.OfferDTO;
 import com.pineapple.eckotur.offer.logic.dto.OfferPageDTO;
 
@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
 public class OfferService {
 
     @Inject
-    protected ICatalogLogic catalogLogicService;
+    protected IOfferLogic catalogLogicService;
 
     
     @GET
