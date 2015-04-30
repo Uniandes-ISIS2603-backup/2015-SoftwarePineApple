@@ -1,6 +1,6 @@
 (function () {
-    var providerModule = angular.module('providerModule');
-    providerModule.controller('providerCtrl', ['$scope', 'providerService', 'salesService', function ($scope, providerService, salesService) {
+    var providerModule = angular.module('providerModule', ['salesModule', 'offerModule']);
+    providerModule.controller('providerCtrl', ['$scope', 'providerService', 'salesService','offerService', function ($scope, providerService, salesService, offerService) {
         providerService.extendCtrl(this, $scope);
         $scope.currentProviderRecord={};
         $scope.currentProviderRecord.userId=1;
@@ -16,14 +16,12 @@
         $scope.currentProviderRecord.messages=[];
         $scope.currentProviderRecord.news=[];
         salesService.fetchRecords().then(function(data){
-            alert('Esto primero');
             $scope.sales=data;
         });
         this.saveOffer = function(offer){
             offer.nSales=0;
         };
         this.getSales = function(){
-            alert('Esto despues');
             for(var i=0;i<$scope.sales.length;i++){
                 if($scope.sales[i].providerId===$scope.currentProviderRecord.name){
                     $scope.currentProviderRecord.answersSales.push($scope.sales[i]);
@@ -44,7 +42,7 @@
                 }
             }
         };
-        /*$scope.currentRecord.id=1;
+        $scope.currentRecord.id=1;
         $scope.currentRecord.sales=[];
         $scope.currentRecord.offers=[];
         this.saveOffer = function(pOffer){
@@ -116,7 +114,7 @@
             {id:'4',offer:"Ida al Amazonas",buyer:"Andrés Angelino",quantity:3,price:200,date:new Date("July 18, 2014 10:13:00")},
             {id:'5',offer:"Visita con los monos",buyer:"Yodeb Yahazalim",quantity:1,price:100,date:new Date()},
             {id:'6',offer:"Visita con los monos",buyer:"Yodeb Yahazalim",quantity:2,price:300,date:new Date()}];
-        };*/
+        };
     }]);
 })();
 
