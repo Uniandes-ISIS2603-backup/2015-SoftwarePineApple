@@ -1,5 +1,5 @@
 (function () {
-    var providerModule = angular.module('providerModule');
+    var providerModule = angular.module('providerModule', ['offerModule', 'salesModule']);
 
     providerModule.run(['$httpBackend', 'provider.context', 'MockModule.mockRecords', function ($httpBackend, context, mockRecords) {
         var sales=[];
