@@ -7,48 +7,46 @@ public class OfferDTO {
 	
 	private Long id;
 	
-	private String price;
+        private String name;
 	
-	private String name;
+	private Long providerId;
 	
-	private Integer type;
-	
-	private String webpage;
+	private String location;
 	
 	private String description;
 	
-	private String providerName;
+	private Long price;
         
-        private String email;
+        private String date;
         
-        private String bankAccount;
+        
         
 	public Long getId(){
 		return id;
 	}
 	
-	public Integer getType(){
-		return type;
+	public Long getProviderId(){
+		return providerId;
 	}
 	
 	public String getName(){
 		return name;
 	}
 
-	public String getWebpage(){
-		return webpage;
+	public String getLocation(){
+		return location;
 	}
 	
 	public String getDescription(){
 		return description;
 	}
         
-        public String getEmail(){
-            return email;
+        public Long getPrice(){
+            return price;
         }
         
-        public String getBankAccount(){
-            return bankAccount;
+        public String getDate(){
+            return date;
         }
     
 
@@ -56,8 +54,8 @@ public class OfferDTO {
 		this.id=Id;
 	}
 	
-	public void setType(Integer Type){
-		this.type=Type;
+	public void setProviderId(Long providerId){
+		this.providerId=providerId;
 	}
 	
 	public void setName(String name){
@@ -65,20 +63,20 @@ public class OfferDTO {
 	}
 	
 	
-	public void setWebpage(String webpage){
-		this.webpage=webpage;
+	public void setLocation(String Location){
+		this.location=location;
 	}
 	
 	public void setDescription(String description){
 		this.description=description;
 	}
         
-        public void setEmail(String email){
-            this.email=email;
+        public void setPrice(Long price){
+            this.price=price;
         }
         
-        public void setBankAccount(String bankAccount){
-            this.bankAccount = bankAccount;
+        public void setDate(String date){
+            this.date = date;
         }
     
 	
