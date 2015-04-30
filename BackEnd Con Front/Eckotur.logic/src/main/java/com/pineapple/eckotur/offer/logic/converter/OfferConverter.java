@@ -5,20 +5,20 @@ import com.pineapple.eckotur.offer.logic.entity.OfferEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CatalogConverter {
+public class OfferConverter {
 
     public static OfferDTO entity2PersistenceDTO(OfferEntity entity) {
         if (entity != null) {
         	OfferDTO dto = new OfferDTO();	
                 
         	dto.setName(entity.getName());
-        	dto.setWebpage(entity.getWebpage());
+        	dto.setPrice(entity.getPrice());
         	dto.setDescription(entity.getDescription());
                 
-        	dto.setId(entity.getUserId());
-                dto.setType(entity.getUserType());
-                dto.setEmail(entity.getEmail());
-                dto.setBankAccount(entity.getBankAccount());
+        	dto.setId(entity.getId());
+                dto.setProviderId(entity.getProviderId());
+                dto.setLocation(entity.getLocation());
+                dto.setDate(entity.getDate());
             return dto;
         } else {
             return null;
@@ -29,13 +29,13 @@ public class CatalogConverter {
         if (dto != null) {
         	OfferEntity entity = new OfferEntity();
                 
-        	entity.setUserId(dto.getId());
+        	entity.setId(dto.getId());
         	entity.setName(dto.getName());
-        	entity.setWebpage(dto.getWebpage());
+        	entity.setProviderId(dto.getProviderId());
         	entity.setDescription(dto.getDescription());
-                entity.setBankAccount(dto.getBankAccount());
-                entity.setUserType(dto.getType());
-                entity.setEmail(dto.getEmail());
+                entity.setLocation(dto.getLocation());
+                entity.setDate(dto.getDate());
+                entity.setPrice(dto.getPrice());
             return entity;
         } else {
             return null;

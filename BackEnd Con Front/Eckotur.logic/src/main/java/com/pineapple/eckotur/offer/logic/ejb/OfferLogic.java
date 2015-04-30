@@ -3,7 +3,7 @@ package com.pineapple.eckotur.offer.logic.ejb;
 import com.pineapple.eckotur.offer.logic.api.ICatalogLogic;
 import com.pineapple.eckotur.offer.logic.dto.OfferDTO;
 import com.pineapple.eckotur.offer.logic.dto.OfferPageDTO;
-import com.pineapple.eckotur.offer.logic.converter.CatalogConverter;
+import com.pineapple.eckotur.offer.logic.converter.OfferConverter;
 import com.pineapple.eckotur.offer.logic.entity.OfferEntity;
 import java.util.List;
 import javax.ejb.LocalBean;
@@ -20,7 +20,7 @@ public class OfferLogic implements ICatalogLogic {
 
     public List<OfferDTO> getOffers() {
         Query q = entityManager.createQuery("select u from OfferEntity u");
-        return CatalogConverter.entity2PersistenceDTOList(q.getResultList());
+        return OfferConverter.entity2PersistenceDTOList(q.getResultList());
     }
 
     public OfferPageDTO getOffers(Integer page, Integer maxRecords) {
@@ -34,19 +34,19 @@ public class OfferLogic implements ICatalogLogic {
         }
         OfferPageDTO response = new OfferPageDTO();
         response.setTotalRecords(regCount);
-        response.setRecords(CatalogConverter.entity2PersistenceDTOList(q.getResultList()));
+        response.setRecords(OfferConverter.entity2PersistenceDTOList(q.getResultList()));
         return response;
     }
 
     public OfferDTO getOffer(Long id) {
-        return CatalogConverter.entity2PersistenceDTO(entityManager.find(OfferEntity.class, id));
+        return OfferConverter.entity2PersistenceDTO(entityManager.find(OfferEntity.class, id));
     }
 
  
     public OfferDTO createOffer(OfferDTO offer) {
-        OfferEntity entity = CatalogConverter.persistenceDTO2Entity(offer);
+        OfferEntity entity = OfferConverter.persistenceDTO2Entity(offer);
         entityManager.persist(entity);
-        return CatalogConverter.entity2PersistenceDTO(entity);
+        return OfferConverter.entity2PersistenceDTO(entity);
     }
     
      public void deleteOffer(Long id) {
@@ -55,7 +55,7 @@ public class OfferLogic implements ICatalogLogic {
     }
      
      public void updateOffer(OfferDTO offer) {
-        OfferEntity entity = entityManager.merge(CatalogConverter.persistenceDTO2Entity(offer));
-        CatalogConverter.entity2PersistenceDTO(entity);
+        OfferEntity entity = entityManager.merge(OfferConverter.persistenceDTO2Entity(offer));
+        OfferConverter.entity2PersistenceDTO(entity);
     }
 }
