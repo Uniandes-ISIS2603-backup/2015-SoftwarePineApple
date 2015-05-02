@@ -3,6 +3,13 @@
   <persistence-unit name="EckoturPU" transaction-type="JTA">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <jta-data-source>jdbcISIS4719</jta-data-source>
+    <class>com.pineapple.eckotur.client.logic.entity.ClientEntity</class>
+    <class>com.pineapple.eckotur.message.logic.entity.MessageEntity</class>
+    <class>com.pineapple.eckotur.news.logic.entity.NewsEntity</class>
+    <class>com.pineapple.eckotur.offer.logic.entity.OfferEntity</class>
+    <class>com.pineapple.eckotur.provider.logic.entity.ProviderEntity</class>
+    <class>com.pineapple.eckotur.provider.logic.entity.SaleEntity</class>
+    <class>org.glassfish.ejb.persistent.timer.TimerState</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="eclipselink.ddl-generation" value="create-tables"/>
