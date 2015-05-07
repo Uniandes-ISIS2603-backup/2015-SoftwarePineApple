@@ -42,7 +42,8 @@ public class ProviderService {
     }
     
     @POST
-    public OfferDTO createOffer (OfferDTO offer)
+    @Path("/providers/{id}/offers/")
+    public OfferDTO createOffer (OfferDTO offer,@PathParam("id") Long id)
     {
         return offerLogicService.createOffer(offer);
     }
