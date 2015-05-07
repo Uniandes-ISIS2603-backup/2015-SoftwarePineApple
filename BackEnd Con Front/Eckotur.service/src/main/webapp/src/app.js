@@ -6,15 +6,13 @@
 	}]);
             
             
-        var mainApp2 = angular.module('mainApp2', ['ngRoute','providerModule']);
+        var mainApp2 = angular.module('mainApp2', ['ngRoute', 'offerModule']);
+
         mainApp2.config(['$routeProvider', function ($routeProvider) {
-                    
-                $routeProvider.when('/offer', {
-                        templateUrl: '../pages/forms.html'
-                    }).otherwise({
-                        redirectTo:'/'
-                    });
-          }]);
+            $routeProvider.when('/offer', {
+                templateUrl: '../src/modules/offer/offer.tpl.html'
+            }).otherwise('/');
+        }]);
       
 })();
 

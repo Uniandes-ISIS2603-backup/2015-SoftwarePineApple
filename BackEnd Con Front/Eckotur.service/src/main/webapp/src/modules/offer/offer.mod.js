@@ -1,10 +1,9 @@
 (function () {
-    var providerModule = angular.module('offerModule', ['CrudModule', 'MockModule']);
+    var sportModule = angular.module('offerModule', ['CrudModule', 'MockModule']);
 
-    providerModule.constant('offer.context', 'offers');
+    sportModule.constant('offer.context', 'offers');
 
-    providerModule.config(['offer.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
-        urlsProvider.registerUrl(context);
-        
-    }]);
+    sportModule.config(['offer.context', 'MockModule.urlsProvider', function (context, urlsProvider) {
+            urlsProvider.registerUrl(context);
+        }]);
 })();

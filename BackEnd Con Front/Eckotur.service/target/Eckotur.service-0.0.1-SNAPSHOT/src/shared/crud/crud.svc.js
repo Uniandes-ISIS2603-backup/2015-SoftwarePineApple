@@ -5,8 +5,8 @@
             function crudConstructor() {
                 this.api = RestAngular.all(this.url);
 
-                this.fetchRecords = function (currentPage, itemsPerPage) {
-                    return this.api.getList(null, {page: currentPage, maxRecords: itemsPerPage});
+                this.fetchRecords = function () {
+                    return this.api.getList();
                 };
                 this.saveRecord = function (currentRecord) {
                     if (currentRecord.id) {
@@ -23,11 +23,8 @@
                     scope.currentRecord = {};
                     scope.records = [];
 
-                    //Variables de paginacion
-                    scope.maxSize = 5;
-                    scope.itemsPerPage = 5;
-                    scope.totalItems = 0;
-                    scope.currentPage = 1;
+                    //Variables para el controlador
+                    ctrl.editMode = false;
 
                     //Funciones que no requieren del servicio
                     ctrl.createRecord = function () {
@@ -42,14 +39,9 @@
                     //Funciones que usan el servicio CRUD
                     var service = this;
 
-                    ctrl.pageChanged = function () {
-                        this.fetchRecords();
-                    };
-
                     ctrl.fetchRecords = function () {
-                        return service.fetchRecords(scope.currentPage, scope.itemsPerPage).then(function (data) {
+                        return service.fetchRecords().then(function (data) {
                             scope.records = data;
-                            scope.totalItems = data.totalRecords;
                             scope.currentRecord = {};
                             ctrl.editMode = false;
                             return data;
