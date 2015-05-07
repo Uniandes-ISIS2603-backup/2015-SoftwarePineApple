@@ -41,12 +41,12 @@ public class ProviderService {
         return providerLogicService.createProvider(provider);
     }
     
-    @POST
-    @Path("/providers/{id}/offers/")
-    public OfferDTO createOffer (OfferDTO offer,@PathParam("id") Long id)
-    {
-        return offerLogicService.createOffer(offer);
-    }
+    //@POST
+  //  @Path("/providers/{id}/offers/")
+  //  public OfferDTO createOffer (OfferDTO offer,@PathParam("id") Long id)
+   // {
+   //     return offerLogicService.createOffer(offer);
+   // }
 
     @DELETE
     @Path("{id}")
