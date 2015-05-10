@@ -1,6 +1,5 @@
 package com.pineapple.eckotur.service;
 
-import com.pineapple.eckotur.offer.logic.api.IOfferLogic;
 import com.pineapple.eckotur.offer.logic.dto.OfferDTO;
 import com.pineapple.eckotur.offer.logic.dto.OfferPageDTO;
 
@@ -22,32 +21,32 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 public class OfferService {
 
-    @Inject
-    protected IOfferLogic OfferLogicService;
+    //@Inject
+    //protected IOfferLogic OfferLogicService;
 
                                                                                         
-    @GET
-    public OfferPageDTO getOffer(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
-        return OfferLogicService.getOffers(page, maxRecords);
-    }
+//    @GET
+//    public OfferPageDTO getOffer(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
+//        return OfferLogicService.getOffers(page, maxRecords);
+//    }
 
-    @GET
-    @Path("{id}")
-    public OfferDTO getOffer(@PathParam("id") Long id) {
-        return OfferLogicService.getOffer(id);
-    }
+//    @GET
+//    @Path("{id}")
+//    public OfferDTO getOffer(@PathParam("id") Long id) {
+//        return OfferLogicService.getOffer(id);
+//    }
 
-    @POST
-    public void createOffer (OfferDTO offer)
-    {
-        OfferLogicService.createOffer(offer);
-    }
+//    @POST
+//    public void createOffer (OfferDTO offer)
+//    {
+//        OfferLogicService.createOffer(offer);
+//    }
     
-    @PUT
-    @Path("{id}")
-    public void updateOffer (@PathParam("id")Long id,OfferDTO offer)
-    {
-        OfferLogicService.updateOffer(offer);
-    }
+//    @PUT
+//    @Path("{id}")
+//    public void updateOffer (@PathParam("id")Long id,OfferDTO offer)
+//    {
+//        OfferLogicService.updateOffer(offer);
+//    }
 }
 
