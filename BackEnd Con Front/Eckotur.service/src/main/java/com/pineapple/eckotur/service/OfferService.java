@@ -25,7 +25,7 @@ public class OfferService {
     @Inject
     protected IOfferLogic OfferLogicService;
 
-                                                                                        8
+                                                                                        
     @GET
     public OfferPageDTO getOffer(@QueryParam("page") Integer page, @QueryParam("maxRecords") Integer maxRecords) {
         return OfferLogicService.getOffers(page, maxRecords);
