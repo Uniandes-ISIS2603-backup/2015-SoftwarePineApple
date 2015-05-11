@@ -28,16 +28,24 @@
 			<thead>
 				<tr>
 					<th>Offer Name</th>
-					<th>Min Age</th>
-					<th>Max Age</th>
-					<th>Actions</th>
+					<th>Offer Id</th>
+					<th>Provider Id</th>
+                                        <th>description</th>
+					<th>Location</th>
+                                        <th>Price</th>
+                                        <th>date</th>
+                                        
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="record in records">
 					<td>{{record.name}}</td>
-					<td>{{record.minAge}}</td>
-					<td>{{record.maxAge}}</td>
+					<td>{{record.offerId}}</td>
+					<td>{{record.providerId}}</td>
+                                        <td>{{record.description}}</td>
+                                        <td>{{record.location}}</td>
+                                        <td>{{record.price}}</td>
+                                        <td>{{record.date}}</td>
 					<td>
 						<button class="btn btn-default btn-sm" ng-click="sportCtrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
 						<button class="btn btn-default btn-sm" ng-click="sportCtrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Delete</button>
@@ -48,18 +56,31 @@
 	</div>
 	<div ng-show="sportCtrl.editMode">
 		<form name="countryForm" role="form">
-			<input id="name" class="form-control" type="hidden" ng-model="currentRecord.id"/>
+			<div class="form-group">
+				<label for="name">id</label>
+				<input id="name" class="form-control" type="number" ng-model="currentRecord.offerId"/>
+                        <div class="form-group">
+				<label for="name">provider id</label>
+				<input id="name" class="form-control" type="number" ng-model="currentRecord.providerId"/>
 			<div class="form-group">
 				<label for="name">Name</label>
 				<input id="name" class="form-control" type="text" ng-model="currentRecord.name"/>
 			</div>
 			<div class="form-group">
-				<label for="minAge">Min Age</label>
-				<input id="minAge" class="form-control" type="number" ng-model="currentRecord.minAge"/>
+				<label for="description">Description</label>
+				<input id="minAge" class="form-control" type="text" ng-model="currentRecord.description"/>
 			</div>
 			<div class="form-group">
-				<label for="maxAge">Max Age</label>
-				<input id="maxAge" class="form-control" type="number" ng-model="currentRecord.maxAge"/>
+				<label for="location">Location</label>
+				<input id="maxAge" class="form-control" type="text" ng-model="currentRecord.location"/>
+			</div>
+                        <div class="form-group">
+				<label for="price">price</label>
+				<input id="maxAge" class="form-control" type="text" ng-model="currentRecord.price"/>
+			</div>
+                        <div class="form-group">
+				<label for="date">date</label>
+				<input id="maxAge" class="form-control" type="text" ng-model="currentRecord.date"/>
 			</div>
 		</form>
 	</div>
