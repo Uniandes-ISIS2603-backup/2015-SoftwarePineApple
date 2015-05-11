@@ -28,19 +28,16 @@
 			<thead>
 				<tr>
 					<th>Offer Name</th>
-					<th>Offer Description</th>
-					<th>Offer Price</th>
-                                        <th>Offer Image Link</th>
-                                        
+					<th>Min Age</th>
+					<th>Max Age</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr ng-repeat="record in records">
 					<td>{{record.name}}</td>
-					<td>{{record.description}}</td>
-					<td>{{record.price}}</td>
-                                        <td>{{record.imageLink}}</td>
+					<td>{{record.minAge}}</td>
+					<td>{{record.maxAge}}</td>
 					<td>
 						<button class="btn btn-default btn-sm" ng-click="sportCtrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
 						<button class="btn btn-default btn-sm" ng-click="sportCtrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Delete</button>
@@ -57,16 +54,12 @@
 				<input id="name" class="form-control" type="text" ng-model="currentRecord.name"/>
 			</div>
 			<div class="form-group">
-				<label for="description">Description</label>
-				<input id="description" class="form-control" type="text" ng-model="currentRecord.description"/>
+				<label for="minAge">Min Age</label>
+				<input id="minAge" class="form-control" type="number" ng-model="currentRecord.minAge"/>
 			</div>
 			<div class="form-group">
-				<label for="price">Price</label>
-				<input id="price" class="form-control" type="number" ng-model="currentRecord.price"/>
-			</div>
-                        <div class="form-group">
-				<label for="imageLink">Image Link</label>
-				<input id="imageLink" class="form-control" type="text" ng-model="currentRecord.imageLink"/>
+				<label for="maxAge">Max Age</label>
+				<input id="maxAge" class="form-control" type="number" ng-model="currentRecord.maxAge"/>
 			</div>
 		</form>
 	</div>
