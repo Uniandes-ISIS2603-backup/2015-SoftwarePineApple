@@ -1,7 +1,13 @@
 package com.pineapple.eckotur.service;
+import com.pineapple.eckotur.client.logic.api.ICartLogic;
 import com.pineapple.eckotur.client.logic.api.IClientLogic;
+import com.pineapple.eckotur.client.logic.dto.CartDTO;
 import com.pineapple.eckotur.client.logic.dto.ClientDTO;
 import com.pineapple.eckotur.client.logic.dto.ClientPageDTO;
+import com.pineapple.eckotur.offer.logic.dto.OfferDTO;
+import com.pineapple.eckotur.offer.logic.dto.OfferPageDTO;
+import java.io.Console;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -24,6 +30,7 @@ public class ClientService {
 
     @Inject
     protected IClientLogic clientLogicService;
+    protected ICartLogic cartLogicService;
 
     @POST
     public ClientDTO createClient(ClientDTO client) {
@@ -52,6 +59,45 @@ public class ClientService {
     public void updateclient(@PathParam("id") Long id, ClientDTO client) {
         clientLogicService.updateClient(client);
     }
+    
+    @POST
+    @Path("{idClient}/cart/{idOff}")
+    public CartDTO addOfferToCart(@PathParam("idClient") Long idClient, @PathParam("idOff") Long idOffer){
+        CartDTO cart = new CartDTO();
+        cart.setIdClient(idClient);
+        cart.setIdOffer(idOffer);
+        return clientLogicService.addToCart(cart);
+    }
+    
+    @GET
+    @Path("{id}/cart")
+    public OfferPageDTO getCart(@PathParam("id") Long id) {
+        return clientLogicService.getCart(id);
+    }
+    
+    @GET
+    @Path("{idClient}/cart/{idOff}")
+    public OfferDTO getOfferDetail(@PathParam("idCLient") Long idClient, @PathParam("idOff") Long idOffer) {
+        return clientLogicService.getOfferInCart(idClient, idOffer);
+    }
+    
+    
+    @DELETE
+    @Path("{id}/cart")
+    public void emptyCart(@PathParam("id") Long id) {
+     
+        clientLogicService.emptyCart(id);
+    }
+    
+    @DELETE
+    @Path("{idClient}/cart/{idOff}")//NOMBREEEE
+    public void removeOfferInCart (@PathParam("idCLient") Long idClient, @PathParam("idOff") Long idOffer) {
+        CartDTO cart = new CartDTO();
+        cart.setIdClient(idClient);
+        cart.setIdOffer(idOffer);
+        clientLogicService.deleteOfferInCart(cart);
+    }
+    
     
    
     
