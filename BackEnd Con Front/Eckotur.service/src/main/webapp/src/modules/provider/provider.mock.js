@@ -4,8 +4,7 @@
     providerModule.run(['$httpBackend', 'provider.context', 'MockModule.mockRecords', function ($httpBackend, context, mockRecords) {
         var sales=[];
         var offers=[];
-        var messages=[];
-        var news=[];
+        
         $httpBackend.whenGET('webresources/' + context + '/' + $scope.currentRecord.id+'sales').respond(function () {
             return sales;
         });

@@ -1,7 +1,10 @@
 package com.pineapple.eckotur.client.logic.api;
 
+import com.pineapple.eckotur.client.logic.dto.CartDTO;
 import com.pineapple.eckotur.client.logic.dto.ClientDTO;
 import com.pineapple.eckotur.client.logic.dto.ClientPageDTO;
+import com.pineapple.eckotur.offer.logic.dto.OfferDTO;
+import com.pineapple.eckotur.offer.logic.dto.OfferPageDTO;
 import java.util.List;
 
 public interface IClientLogic 
@@ -19,5 +22,14 @@ public interface IClientLogic
 
     public void updateClient(ClientDTO detail);
     
-    public void getCart (Long id);
+    public OfferPageDTO  getCart (Long id);
+    
+    
+    public CartDTO addToCart( CartDTO cart);
+    
+    public OfferDTO getOfferInCart( Long idClient, Long idOffer);
+    
+    public void emptyCart(Long idClient);
+    
+    public CartDTO deleteOfferInCart( CartDTO cart) ;
 }

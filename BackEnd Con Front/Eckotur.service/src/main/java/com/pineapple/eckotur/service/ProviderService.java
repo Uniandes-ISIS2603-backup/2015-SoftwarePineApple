@@ -2,6 +2,7 @@ package com.pineapple.eckotur.service;
 
 import com.pineapple.eckotur.message.logic.dto.MessageDTO;
 import com.pineapple.eckotur.news.logic.dto.NewsDTO;
+import com.pineapple.eckotur.offer.logic.api.IOfferLogic;
 import com.pineapple.eckotur.provider.logic.api.IProviderLogic;
 import com.pineapple.eckotur.provider.logic.dto.ProviderDTO;
 import com.pineapple.eckotur.provider.logic.dto.ProviderPageDTO;
@@ -33,18 +34,19 @@ public class ProviderService {
      */
     @Inject
     protected IProviderLogic providerLogicService;
+    protected IOfferLogic offerLogicService;
 
     @POST
     public ProviderDTO createProvider(ProviderDTO provider) {
         return providerLogicService.createProvider(provider);
     }
     
-    //@POST
-  //  @Path("/providers/{id}/offers/")
-  //  public OfferDTO createOffer (OfferDTO offer,@PathParam("id") Long id)
-   // {
-   //     return offerLogicService.createOffer(offer);
-   // }
+    @POST
+      @Path("/providers/{id}/offers/")
+      public OfferDTO createOffer (OfferDTO offer,@PathParam("id") Long id)
+     {
+        return offerLogicService.createOffer(offer);
+   }
 
     @DELETE
     @Path("{id}")
@@ -79,7 +81,7 @@ public class ProviderService {
     @Path("{id}/offers")
     public void updateOffer (@PathParam("id")Long id,OfferDTO offer)
     {
-       // offerLogicService.updateOffer(offer);
+       offerLogicService.updateOffer(offer);
     }
     
     @GET

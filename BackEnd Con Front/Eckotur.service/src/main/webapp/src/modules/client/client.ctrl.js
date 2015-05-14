@@ -45,12 +45,21 @@
                         };
                         this.addToCart= function(offer){
                             this.start();
-                            var newBou ={id:offer.id,offer:offer.name, provider:offer.provider ,quantity:"1",price: offer.price ,date:'05/03/2015'};
-                            $scope.currentRecord.inCart.push(newBou);
-                           // this.offersMode = false;
-                         //   this.purchasesMode = true;
+                            var offerToCart= angular.copy(offer);
+                            $scope.currentRecord.inCart.push(offerToCart);
+                            this.showCart();
                             
                         };
+                        
+                        this.addtoBought = function()
+                        {
+                            for(var i =0;i<inCart.size();i++)
+                            {
+                                var offerToAdd = angular.copy(inCart[i]);
+                                $scope.currentRecord.boughts.push(offerToAdd);
+                                $scope.currentRecord.inCart.delete(inCart[i]);
+                            }
+                        }
                                                
                         this.registerOfferts = function(){
                             $scope.currentRecord.lclOffers=[{id:'11', name:'Sierra nevada', price:"$150 US", type:"EcoTour",  provider:"Alcaldia SantaMarta",details:"tres dias recorriendo la sierra nevada .. "},
