@@ -1,0 +1,83 @@
+<div ng-controller="sportCtrl as sportCtrl">
+    
+    <div ng-hide="sportCtrl.editMode">
+        <section id="form" ><!--form-->
+		<div  class="container">
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-1">
+					<div class="login-form"><!--login form-->
+						<h2>Login to your account</h2>
+						<form role="form" >
+							<input id="userName" type="text" placeholder="User" ng-model="userLogin">
+                                                        <input id="Password" type="password" placeholder="Password" ng-model="userPass">
+							<span>
+								<input type="checkbox" class="checkbox"> 
+								Keep me signed in
+							</span>
+							<button id = "btnlogin" ng-click="sportCtrl.verifyLogin(userLogin, userPass)" class="btn btn-default">Login</button>
+						</form>
+					</div><!--/login form-->
+				</div>
+				<div class="col-sm-1">
+					<h2 class="">OR</h2>
+				</div>
+				<div  class="col-sm-4" >
+					<div class="signup-form"><!--sign up form-->
+						<h2>New User Signup!</h2>
+						<form role="form" >
+                                                    <input id="usuarioID" type="hidden" />
+                                                        <input id="id" class="form-control" type="hidden" ng-model="currentRecord.id"/>
+							<input id="nombre" type="text" placeholder="Name" ng-model="currentRecord.fullName">
+                                                        <input id="usuario" type="text" placeholder="Usuario" ng-model="currentRecord.userName">
+							<input id="correo" type="email" placeholder="Email Address" ng-model="currentRecord.email">
+							<input id="pass" type="password" placeholder="Password" ng-model="currentRecord.password">
+                                                        <input id="imagen" type="text" placeholder="Image Url" ng-model="currentRecord.imageUrl">
+							<button id = "btnRegistro" ng-click="sportCtrl.saveRecord()" class="btn btn-default">Signup</button>
+						</form>
+					</div><!--/sign up form-->
+				</div>
+                                <div class="col-sm-1">
+					<h2 class="">OR</h2>
+				</div>
+                                <div class="col-sm-1">
+                                    <a href="indexProv.html" style="color:green"><i class="fa fa-user"></i> Login as Provider</a>
+				</div>
+			</div>
+		</div>
+	</section><!--/form-->
+	
+    </div>
+    
+    
+    
+    
+<!--    <div ng-show="sportCtrl.editMode">
+        <form name="countryForm" role="form">
+            <input id="id" class="form-control" type="hidden" ng-model="currentRecord.id"/>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" class="form-control" type="text" ng-model="currentRecord.name"/>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input id="description" class="form-control" type="text" ng-model="currentRecord.description"/>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input id="price" class="form-control" type="text" ng-model="currentRecord.price"/>
+            </div>
+            <div class="form-group">
+                <label for="imageUrl">Image URL</label>
+                <input id="imageUrl" class="form-control" type="text" ng-model="currentRecord.imageUrl"/>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <input id="quantity" class="form-control" type="text" ng-model="currentRecord.quantity"/>
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" class="form-control" ng-options="country.id as country.name for country in countryRecords" ng-model="currentRecord.country"></select>
+            </div>
+        </form>
+    </div>-->
+</div>

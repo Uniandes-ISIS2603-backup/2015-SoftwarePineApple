@@ -1,0 +1,101 @@
+<div ng-controller="sportCtrl as sportCtrl">
+    
+    <div ng-hide="sportCtrl.editMode">
+        
+        <section id="slider"><!--slider-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+						
+						<div class="carousel-inner">
+							
+                                                            
+                                                         <div class="item active" ng-repeat="record in records" ng-if="sportCtrl.isOffer(record) && $index<= 1">
+								<div class="col-sm-8">
+									
+                                                                    <center><h1><span>{{record.name}}</span></h1>
+									<p>{{record.description}}</p>
+                                                                        <a href="product-details.html#{{record.id}}"><button type="button" class="btn btn-default get">Get it now</button></a>
+                                                                    </center>
+                                                                </div>
+								<div class="col-sm-4" style="width: 300px;height: 300px;border-radius: 150px;webkit-border-radius: 150px;-moz-border-radius: 150px;background: url({{record.imageUrl}}) no-repeat;">
+									
+								</div>
+							</div>
+                                                        <div class="item" ng-repeat="record in records" ng-if="sportCtrl.isOffer(record) && $index!== 1">
+								<div class="col-sm-8">
+									
+                                                                    <center><h1><span>{{record.name}}</span></h1>
+									<p>{{record.description}}</p>
+                                                                        <a href="product-details.html#{{record.id}}"><button type="button" class="btn btn-default get">Get it now</button></a>
+                                                                    </center>
+                                                                </div>
+								<div class="col-sm-4" style="width: 300px;height: 300px;border-radius: 150px;webkit-border-radius: 150px;-moz-border-radius: 150px;background: url({{record.imageUrl}}) no-repeat;">
+									
+								</div>
+							</div>
+                                                    
+                                                        
+                                                    
+						</div>
+						
+						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+							<i class="fa fa-angle-left"></i>
+						</a>
+						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+							<i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section><!--/slider-->
+	
+        
+	<section>
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-sm-12 padding-right">
+					<div class="features_items"><!--features_items-->
+					  <h2 class="title text-center">Offers</h2>
+                                          
+                                            <div ng-repeat="record in records" ng-if="sportCtrl.isOffer(record)" class="col-sm-4">
+                                            <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                            <div class="productinfo text-center">
+                                                <img src="{{record.imageUrl}}" alt="">
+                                                <h2>{{record.price}}</h2>
+                                                <p>{{record.name}}</p>
+                                                <a href="product-details.html#{{record.id}}" class="btn btn-default add-to-cart">Show Info</a>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div> 
+        
+                                            <div class="col-sm-12">
+                                                <center>
+                                                     <pagination total-items="totalItems" ng-model="currentPage" ng-change="sportCtrl.pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></pagination>
+                                                </center>
+                                            </div>
+						
+                                        </div><!--features_items-->
+					
+					
+					
+					
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	
+        
+        
+        
+        
+    </div>
+    
+</div>
