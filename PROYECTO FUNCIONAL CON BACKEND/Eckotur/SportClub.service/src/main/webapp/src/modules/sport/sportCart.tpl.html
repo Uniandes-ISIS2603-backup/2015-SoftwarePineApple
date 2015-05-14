@@ -1,0 +1,80 @@
+<div ng-controller="sportCtrl as sportCtrl">
+    
+    <div ng-hide="sportCtrl.editMode">
+        <section id="cart_items">
+		<div class="container">
+			<div class="review-payment">
+				<h2>Cart</h2>
+			</div>
+
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="image">Item</td>
+							<td class="description"></td>
+							<td class="price">Price</td>
+							<td class="quantity">Quantity</td>
+							<td class="total">Total</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+                                                <tr ng-repeat="record in records" ng-if="sportCtrl.isOffer(record) && $index <= 2">
+							<td class="cart_product">
+								<a href=""><img src="{{record.imageUrl}}" alt="" style ="width:50px"></a>
+							</td>
+                                        
+							<td class="cart_description">
+								<h4><a href="">{{record.name}}</a></h4>
+								<p>{{record.description}}</p>
+							</td>
+							<td class="cart_price">
+								<p>{{record.price}}</p>
+							</td>
+							<td class="cart_quantity">
+                                                                <p>1</p>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">{{record.price}}</p>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+
+						
+						
+					</tbody>
+				</table>
+			</div>
+			<pagination total-items="totalItems" ng-model="currentPage" ng-change="sportCtrl.pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></pagination>
+                        
+                        <br>
+                        <div class="review-payment">
+				<h2>Checkout</h2>
+			</div>
+
+                    
+			<div class="shopper-informations">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="shopper-info">
+							<p>Shopper Information</p>
+							<form>
+								<input type="text" placeholder="User Name">
+							</form>
+                                                        <a class="btn btn-primary" href="index.html" onclick="alert('Thanks for using Eckotur')">Buy</a>
+						</div>
+					</div>
+									
+				</div>
+			</div>
+			
+		</div>
+	</section> <!--/#cart_items-->
+
+        
+    </div>
+    
+</div>

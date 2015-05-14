@@ -1,0 +1,13 @@
+/crudmaker.web/target/
+/SportClass.api/target/
+/SportClass.logic/target/
+/SportClass.mock/target/
+/SportClass.web/target/
+*.settings
+*.classpath
+*.project
+*.log
+/SportClass.service/target/
+/SportClub.logic/target/
+/SportClub.service/target/
+/AngularJS/nbproject/private/

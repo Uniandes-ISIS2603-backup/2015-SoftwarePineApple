@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+    <head>
+        <title>Eckotur Provider</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="src/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="src/assets/libs/jquery-1.11.2.min.js"></script>
+        <script src="src/assets/libs/underscore-min.js"></script>
+        <script src="src/assets/libs/angular.min.js"></script>
+        <script src="src/assets/libs/angular-mocks.js"></script>
+        <script src="src/assets/libs/angular-route.min.js"></script>
+        <script src="src/assets/libs/ui-bootstrap-tpls-0.12.1.min.js"></script>
+        <script src="src/assets/libs/restangular.min.js"></script>
+
+        <script src="src/app.js"></script>
+
+        <script src="src/shared/crud/crud.mod.js"></script>
+        <script src="src/shared/crud/crud.svc.js"></script>
+        <script src="src/shared/mocks/mock.mod.js"></script>
+        <script src="src/shared/mocks/mock.svc.js"></script>
+
+        <script src="src/modules/sport/sport.mod.js"></script>
+        <script src="src/modules/sport/sport.ctrl.js"></script>
+        <script src="src/modules/sport/sport.svc.js"></script>
+        
+        <script src="src/modules/country/country.mod.js"></script>
+        <script src="src/modules/country/country.ctrl.js"></script>
+        <script src="src/modules/country/country.mock.js"></script>
+        <script src="src/modules/country/country.svc.js"></script>
+        
+        <script src="src/modules/sale/sale.mod.js"></script>
+        <script src="src/modules/sale/sale.ctrl.js"></script>
+        <script src="src/modules/sale/sale.mock.js"></script>
+        <script src="src/modules/sale/sale.svc.js"></script>
+    </head>
+    <body>
+        
+        
+    <center>
+        <div style="height:200px; background-color:rgba(200,200,200,0.1)">
+            <img style="height:200px;" src="src/images/Logo.png" alt="logo"/>
+        </div>
+    </center>
+    <br>
+    <br>
+        <div class="container">
+            <div class="col-md-4">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a style="color:green" href="#/sport">Offers</a></li>
+                    <li><a style="color:green" href="#/sale">Sales</a></li>
+                    <li><a style="color:green" href="index.html">LogOut</a></li>
+                </ul>
+            </div>
+            <div class="col-md-8">
+                
+                <div ng-view></div>
+            </div>
+        </div>
+    </body>
+</html>

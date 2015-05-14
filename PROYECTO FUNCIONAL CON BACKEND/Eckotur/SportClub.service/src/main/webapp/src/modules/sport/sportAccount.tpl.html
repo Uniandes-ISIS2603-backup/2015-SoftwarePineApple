@@ -1,0 +1,28 @@
+<div ng-controller="sportCtrl as sportCtrl">
+    
+    <div ng-hide="sportCtrl.editMode">
+        <h3>Eckotur Welcomes You:</h3>
+        <div class="single-blog-post" ng-repeat="record in records" ng-if="sportCtrl.isUser(record)">
+		<div class="col-sm-12">
+                    <center>	
+                    <div class="post-meta">
+                            <ul>
+                             <li><i class="fa fa-user"></i>{{record.userName}}</li>
+								
+                            </ul>
+			</div>
+			<a href="">
+                            <img src="{{record.imageUrl}}" alt="" style="width:200px">
+			</a>
+			<p>Name: {{record.fullName}}</p>
+                        <p>Email: {{record.email}}</p>
+                    </center>
+                    <br>
+                    <br>
+                    <br>
+		</div>					
+        </div>
+        
+        
+    </div>
+</div>
